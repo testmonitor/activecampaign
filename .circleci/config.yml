@@ -1,0 +1,43 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/byTestGear/activecampaign
+
+    environment:
+      BASH_ENV: ~/.bashrc
+
+    docker:
+      - image: circleci/php:7.2-node-browsers
+
+    steps:
+      - run:
+          name: Update Composer
+          command: sudo composer self-update
+
+      - checkout
+
+      - run:
+          name: Install Composer Dependencies
+          command: composer install --ignore-platform-reqs
+      - run:
+          name: PHP CS Fixer
+          command: vendor/bin/php-cs-fixer fix --config=.php_cs --diff --dry-run --verbose
+      - run:
+          name: PHPCS
+          command: |
+            mkdir -p ./logs/phpcs
+            vendor/bin/phpcs --standard="PSR1,PSR2" -v --report=junit --report-file=logs/phpcs/junit.xml src/
+      - run:
+          name: Run Unit Tests
+          command: |
+            mkdir -p ./logs/phpunit
+            vendor/bin/phpunit -d memory_limit=512M --log-junit logs/phpunit/junit.xml --testdox-html logs/phpunit/testdox.html
+
+      - store_artifacts:
+          path: ./logs/phpcs
+          destination: phpcs
+
+      - store_artifacts:
+          path: ./logs/phpunit
+          destination: phpunit

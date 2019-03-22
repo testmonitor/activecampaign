@@ -1,0 +1,48 @@
+# Composer
+/vendor
+
+# Laravel 5
+/public/css
+/public/js
+/public/images
+/public/fonts
+/public/mix-manifest.json
+/public/storage
+/public/vendor
+/storage/*.key
+.env
+
+# Storage
+/storage/temp
+
+# Dusk
+.env.backup
+
+# Vagrant / Homestead
+/.vagrant
+after.sh
+Homestead.json
+Homestead.yaml
+
+# NodeJS
+/node_modules
+npm-debug.log
+
+# IDE
+/.idea
+*.sublime-project
+*.sublime-workspace
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+/.vscode
+.phpstorm.meta.php
+.ide_helper.php
+.ide_helper_models.php
+
+# Code Styling / Linting
+.php_cs.cache
+build
+
+# OS
+.DS_Store

@@ -12,14 +12,14 @@ class ContactAutomation extends Resource
     public $id;
 
     /**
-     * Contact ID
+     * Contact ID.
      *
      * @var integer
      */
     public $contact;
 
     /**
-     * Automation ID
+     * Automation ID.
      *
      * @var integer
      */

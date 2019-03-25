@@ -28,5 +28,4 @@ class ActiveCampaignTest extends \PHPUnit\Framework\TestCase
 //        $activeCampaign->organizations();
         $this->assertTrue(true);
     }
-
 }

@@ -2,8 +2,8 @@
 
 namespace ByTestGear\ActiveCampaign\Actions;
 
-use ByTestGear\ActiveCampaign\Resources\Automation;
 use ByTestGear\ActiveCampaign\Resources\Contact;
+use ByTestGear\ActiveCampaign\Resources\Automation;
 
 trait Contacts
 {
@@ -64,7 +64,7 @@ trait Contacts
 
         if (empty($removeAutomation)) {
             return;
-        };
+        }
 
         return $this->delete("contactAutomations/{$removeAutomation->id}");
     }

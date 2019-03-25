@@ -46,7 +46,7 @@ trait Contacts
     }
 
     /**
-     * Remova a atuomation from a contact.
+     * Removing a automation from a contact.
      *
      * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
      * @param \ByTestGear\ActiveCampaign\Resources\Automation $automation
@@ -67,5 +67,20 @@ trait Contacts
         }
 
         return $this->delete("contactAutomations/{$removeAutomation->id}");
+    }
+
+    /**
+     * Removing all automations from a contact.
+     *
+     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
+     * @param \ByTestGear\ActiveCampaign\Resources\Automation $automation
+     */
+    public function removeAllAutomationsFromContact(Contact $contact, Automation $automation)
+    {
+        $contactAutomations = $this->contactAutomations($contact);
+
+        foreach ($contactAutomations as $contactAutomation) {
+            $this->delete("contactAutomations/{$contactAutomation->id}");
+        }
     }
 }

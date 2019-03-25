@@ -7,7 +7,7 @@ use ByTestGear\ActiveCampaign\Resources\Automation;
 trait Automations
 {
     /**
-     * Get all organizations.
+     * Get all automations.
      *
      * @return array
      */

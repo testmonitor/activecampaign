@@ -73,9 +73,8 @@ trait Contacts
      * Removing all automations from a contact.
      *
      * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
-     * @param \ByTestGear\ActiveCampaign\Resources\Automation $automation
      */
-    public function removeAllAutomationsFromContact(Contact $contact, Automation $automation)
+    public function removeAllAutomationsFromContact(Contact $contact)
     {
         $contactAutomations = $this->contactAutomations($contact);
 

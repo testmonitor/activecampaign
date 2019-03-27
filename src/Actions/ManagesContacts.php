@@ -63,10 +63,11 @@ trait ManagesContacts
      * @param string $email
      * @param string $firstName
      * @param string $lastName
+     * @param int $orgid
      *
      * @return Contact
      */
-    public function findOrCreateContact($email, $firstName, $lastName)
+    public function findOrCreateContact($email, $firstName, $lastName, $orgid)
     {
         $contact = $this->findContact($email);
 
@@ -74,7 +75,7 @@ trait ManagesContacts
             return $contact;
         }
 
-        return $this->createContact(compact('email', 'firstName', 'lastName'));
+        return $this->createContact(compact('email', 'firstName', 'lastName', 'orgid'));
     }
 
     /**

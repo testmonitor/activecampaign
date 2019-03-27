@@ -3,7 +3,7 @@
 namespace ByTestGear\ActiveCampaign;
 
 use GuzzleHttp\Client as HttpClient;
-use ByTestGear\ActiveCampaign\Actions\Helpers;
+use ByTestGear\ActiveCampaign\Actions\Tags;
 use ByTestGear\ActiveCampaign\Actions\Contacts;
 use ByTestGear\ActiveCampaign\Actions\Automations;
 use ByTestGear\ActiveCampaign\Actions\CustomFields;
@@ -14,11 +14,11 @@ class ActiveCampaign
 {
     use MakesHttpRequests,
         Automations,
-        Contacts,
         ContactAutomation,
+        Contacts,
         CustomFields,
         Organizations,
-        Helpers;
+        Tags;
 
     /**
      * The TestMonitor API url.

@@ -3,9 +3,9 @@
 namespace ByTestGear\ActiveCampaign;
 
 use Psr\Http\Message\ResponseInterface;
-use ByTestGear\TestMonitorAdmin\Exceptions\NotFoundException;
-use ByTestGear\TestMonitorAdmin\Exceptions\ValidationException;
-use ByTestGear\TestMonitorAdmin\Exceptions\FailedActionException;
+use ByTestGear\ActiveCampaign\Exceptions\NotFoundException;
+use ByTestGear\ActiveCampaign\Exceptions\ValidationException;
+use ByTestGear\ActiveCampaign\Exceptions\FailedActionException;
 
 trait MakesHttpRequests
 {
@@ -14,9 +14,9 @@ trait MakesHttpRequests
      *
      * @param  string $uri
      *
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\FailedActionException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\NotFoundException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\ValidationException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
      * @return mixed
      *
      */
@@ -31,9 +31,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\FailedActionException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\NotFoundException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\ValidationException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
      * @return mixed
      *
      */
@@ -48,9 +48,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\FailedActionException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\NotFoundException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\ValidationException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
      * @return mixed
      *
      */
@@ -65,9 +65,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\FailedActionException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\NotFoundException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\ValidationException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
      * @return mixed
      *
      */
@@ -83,9 +83,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\FailedActionException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\NotFoundException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\ValidationException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
      * @return mixed
      *
      */
@@ -128,9 +128,9 @@ trait MakesHttpRequests
     /**
      * @param  \Psr\Http\Message\ResponseInterface $response
      *
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\ValidationException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\NotFoundException
-     * @throws \ByTestGear\TestMonitorAdmin\Exceptions\FailedActionException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
      * @throws \Exception
      * @return void
      *

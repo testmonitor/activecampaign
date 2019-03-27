@@ -58,11 +58,23 @@ This will provide you with a list of available contacts.
 To create a contact, you can use the `createContact` method:
 
 ```php
-$contact = $activeCampaign->createContact([
+$contact = $activeCampaign->createContact(
     'email' => 'johndoe@example.com',
     'firstName' => 'John',
     'lastName' => 'Doe',
-]);
+);
+```
+
+When the request was successful, `$contact` will contain a Contact object with the contact details.
+
+To retrieve an existing contact or create it when it is missing:
+
+```php
+$contact = $activeCampaign->findOrCreateContact(
+    'email' => 'johndoe@example.com',
+    'firstName' => 'John',
+    'lastName' => 'Doe',
+);
 ```
 
 When the request was successful, `$contact` will contain a Contact object with the contact details.

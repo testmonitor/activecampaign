@@ -28,7 +28,7 @@ trait Tags
     public function findTag($query = null)
     {
         $tags = $this->transformCollection(
-            $this->get('tags', ['query' => ['filters[name]' => $query]]),
+            $this->get('tags', ['query' => ['search' => $query]]),
             Tag::class,
             'tags'
         );
@@ -53,14 +53,14 @@ trait Tags
      *
      * @return mixed
      */
-    public function findOrCreateTag($name)
+    public function findOrCreateTag(array $data)
     {
-        $tag = $this->findTag($name);
+        $tag = $this->findTag($data['name']);
 
         if (empty($tag)) {
-            $this->createTag(['name' => $name]);
+            $this->createTag($data);
 
-            return $this->findTag($name);
+            return $this->findTag($data['name']);
         }
 
         return $tag;

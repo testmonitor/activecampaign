@@ -14,5 +14,5 @@ class Tag extends Resource
     /**
      * @var string
      */
-    public $name;
+    public $tag;
 }

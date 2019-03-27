@@ -6,6 +6,7 @@ use GuzzleHttp\Client as HttpClient;
 use ByTestGear\ActiveCampaign\Actions\Tags;
 use ByTestGear\ActiveCampaign\Actions\Contacts;
 use ByTestGear\ActiveCampaign\Actions\Automations;
+use ByTestGear\ActiveCampaign\Actions\ContactTags;
 use ByTestGear\ActiveCampaign\Actions\CustomFields;
 use ByTestGear\ActiveCampaign\Actions\Organizations;
 use ByTestGear\ActiveCampaign\Actions\ContactAutomation;
@@ -16,6 +17,7 @@ class ActiveCampaign
         Automations,
         ContactAutomation,
         Contacts,
+        ContactTags,
         CustomFields,
         Organizations,
         Tags;

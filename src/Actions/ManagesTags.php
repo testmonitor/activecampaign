@@ -30,7 +30,7 @@ trait ManagesTags
     public function findTag($name)
     {
         $tags = $this->transformCollection(
-            $this->get('tags', ['search' => $name]),
+            $this->get('tags', ['query' => ['search' => $name]]),
             Tag::class,
             'tags'
         );

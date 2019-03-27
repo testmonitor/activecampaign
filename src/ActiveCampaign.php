@@ -3,8 +3,10 @@
 namespace ByTestGear\ActiveCampaign;
 
 use GuzzleHttp\Client as HttpClient;
+use ByTestGear\ActiveCampaign\Actions\ManagesTags;
 use ByTestGear\ActiveCampaign\Actions\ManagesContacts;
 use ByTestGear\ActiveCampaign\Actions\ManagesAutomations;
+use ByTestGear\ActiveCampaign\Actions\ManagesContactTags;
 use ByTestGear\ActiveCampaign\Actions\ManagesCustomFields;
 use ByTestGear\ActiveCampaign\Actions\ManagesOrganizations;
 use ByTestGear\ActiveCampaign\Actions\ManagesContactAutomations;
@@ -14,6 +16,8 @@ class ActiveCampaign
     use MakesHttpRequests,
         ManagesAutomations,
         ManagesContacts,
+        ManagesTags,
+        ManagesContactTags,
         ManagesContactAutomations,
         ManagesCustomFields,
         ManagesOrganizations;

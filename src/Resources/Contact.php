@@ -7,7 +7,7 @@ class Contact extends Resource
     /**
      * The id of the contact.
      *
-     * @var integer
+     * @var int
      */
     public $id;
 
@@ -27,7 +27,7 @@ class Contact extends Resource
     public $email;
 
     /**
-     * @var integer
+     * @var int
      */
     public $orgid;
 }

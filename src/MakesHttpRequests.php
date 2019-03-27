@@ -98,7 +98,7 @@ trait MakesHttpRequests
             $payload
         );
 
-        if (!in_array($response->getStatusCode(), [200, 201])) {
+        if (! in_array($response->getStatusCode(), [200, 201])) {
             return $this->handleRequestError($response);
         }
 

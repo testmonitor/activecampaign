@@ -7,7 +7,7 @@ class Tag extends Resource
     /**
      * The id of the tag.
      *
-     * @var integer
+     * @var int
      */
     public $id;
 

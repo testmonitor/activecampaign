@@ -2,8 +2,10 @@
 
 namespace ByTestGear\ActiveCampaign\Actions;
 
+use ByTestGear\ActiveCampaign\Resources\Tag;
 use ByTestGear\ActiveCampaign\Resources\Contact;
 use ByTestGear\ActiveCampaign\Resources\Automation;
+use ByTestGear\ActiveCampaign\Resources\ContactTag;
 use ByTestGear\ActiveCampaign\Resources\ContactAutomation;
 
 trait ManagesContacts
@@ -95,6 +97,22 @@ trait ManagesContacts
     }
 
     /**
+     * Get all tags of a contact.
+     *
+     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
+     *
+     * @return array
+     */
+    public function contactTags(Contact $contact)
+    {
+        return $this->transformCollection(
+            $this->get("contacts/{$contact->id}/contactTags"),
+            ContactTag::class,
+            'contactTags'
+        );
+    }
+
+    /**
      * Removing a automation from a contact.
      *
      * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
@@ -104,15 +122,15 @@ trait ManagesContacts
     {
         $contactAutomations = $this->contactAutomations($contact);
 
-        $automations = current(array_filter($contactAutomations, function ($contactAutomation) use ($automation) {
+        $contactAutomation = current(array_filter($contactAutomations, function ($contactAutomation) use ($automation) {
             return $contactAutomation->automation == $automation->id;
         }));
 
-        if (empty($automations)) {
+        if (empty($contactAutomation)) {
             return;
         }
 
-        $this->delete("contactAutomations/{$automation->id}");
+        $this->delete("contactAutomations/{$contactAutomation->id}");
     }
 
     /**
@@ -127,5 +145,26 @@ trait ManagesContacts
         foreach ($contactAutomations as $contactAutomation) {
             $this->delete("contactAutomations/{$contactAutomation->id}");
         }
+    }
+
+    /**
+     * Removing a tag from a contact.
+     *
+     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
+     * @param \ByTestGear\ActiveCampaign\Resources\Tag $tag
+     */
+    public function removeTagFromContact(Contact $contact, Tag $tag)
+    {
+        $contactTags = $this->contactTags($contact);
+
+        $contactTag = current(array_filter($contactTags, function ($contactTag) use ($tag) {
+            return $contactTag->tag == $tag->id;
+        }));
+
+        if (empty($contactTag)) {
+            return;
+        }
+
+        $this->delete("contactTags/{$contactTag->id}");
     }
 }

@@ -4,35 +4,83 @@ namespace ByTestGear\ActiveCampaign\Actions;
 
 use ByTestGear\ActiveCampaign\Resources\Contact;
 use ByTestGear\ActiveCampaign\Resources\Automation;
+use ByTestGear\ActiveCampaign\Resources\ContactAutomation;
 
-trait Contacts
+trait ManagesContacts
 {
     /**
      * Get all contacts.
      *
      * @return array
      */
-    public function contacts($email = null)
+    public function contacts()
     {
         return $this->transformCollection(
-            $this->get('contacts', ['query' => ['email' => $email]]),
+            $this->get('contacts'),
             Contact::class,
             'contacts'
         );
     }
 
     /**
+     * Find contact by email.
+     *
+     * @param string $email
+     *
+     * @return array
+     */
+    public function findContact($email)
+    {
+        $organizations = $this->transformCollection(
+            $this->get('contacts', ['query' => ['email' => $email]]),
+            Contact::class,
+            'contacts'
+        );
+
+        return array_shift($organizations);
+    }
+
+    /**
      * Create new contact.
      *
-     * @return \Illuminate\Support\Collection
+     * @param array $data
+     *
+     * @return Contact
      */
     public function createContact(array $data = [])
     {
-        return $this->post('contacts', ['json' => ['contact' => $data]]);
+        $contacts = $this->transformCollection(
+            $this->post('contacts', ['json' => ['contact' => $data]]),
+            Contact::class
+        );
+
+        return array_shift($contacts);
+    }
+
+    /**
+     * Find or create a contact.
+     *
+     * @param string $email
+     * @param string $firstName
+     * @param string $lastName
+     *
+     * @return Contact
+     */
+    public function findOrCreateContact($email, $firstName, $lastName)
+    {
+        $contact = $this->findContact($email);
+
+        if ($contact instanceof Contact) {
+            return $contact;
+        }
+
+        return $this->createContact(compact('email', 'firstName', 'lastName'));
     }
 
     /**
      * Get all automations of a contact.
+     *
+     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
      *
      * @return array
      */
@@ -40,7 +88,7 @@ trait Contacts
     {
         return $this->transformCollection(
             $this->get("contacts/{$contact->id}/contactAutomations"),
-            \ByTestGear\ActiveCampaign\Resources\ContactAutomation::class,
+            ContactAutomation::class,
             'contactAutomations'
         );
     }
@@ -54,19 +102,16 @@ trait Contacts
     public function removeAutomationFromContact(Contact $contact, Automation $automation)
     {
         $contactAutomations = $this->contactAutomations($contact);
-        $removeAutomation = null;
 
-        foreach ($contactAutomations as $contactAutomation) {
-            if ($contactAutomation->automation == $automation->id) {
-                $removeAutomation = $contactAutomation;
-            }
-        }
+        $automations = current(array_filter($contactAutomations, function ($contactAutomation) use ($automation) {
+            return $contactAutomation->automation == $automation->id;
+        }));
 
-        if (empty($removeAutomation)) {
+        if (empty($automations)) {
             return;
         }
 
-        return $this->delete("contactAutomations/{$removeAutomation->id}");
+        $this->delete("contactAutomations/{$automation->id}");
     }
 
     /**

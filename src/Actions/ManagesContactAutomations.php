@@ -5,10 +5,13 @@ namespace ByTestGear\ActiveCampaign\Actions;
 use ByTestGear\ActiveCampaign\Resources\Contact;
 use ByTestGear\ActiveCampaign\Resources\Automation;
 
-trait ContactAutomation
+trait ManagesContactAutomations
 {
     /**
      * Get all organizations.
+     *
+     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
+     * @param \ByTestGear\ActiveCampaign\Resources\Automation $automation
      *
      * @return array
      */

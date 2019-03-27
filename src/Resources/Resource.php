@@ -12,7 +12,7 @@ class Resource
     public $attributes;
 
     /**
-     * The TestMonitor SDK instance.
+     * The ActiveCampaign SDK instance.
      *
      * @var \ByTestGear\ActiveCampaign\ActiveCampaign
      */

@@ -5,7 +5,7 @@ namespace ByTestGear\ActiveCampaign\Resources;
 class CustomField extends Resource
 {
     /**
-     * The id of the rule.
+     * The id of the custom field.
      *
      * @var integer
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTestGear\TestMonitorAdmin\Exceptions;
+namespace ByTestGear\ActiveCampaign\Exceptions;
 
 use Exception;
 

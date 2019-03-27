@@ -2,10 +2,10 @@
 
 namespace ByTestGear\ActiveCampaign\Resources;
 
-class Automation extends Resource
+class Tag extends Resource
 {
     /**
-     * The id of the automation.
+     * The id of the tag.
      *
      * @var integer
      */
@@ -14,5 +14,5 @@ class Automation extends Resource
     /**
      * @var string
      */
-    public $name;
+    public $tag;
 }

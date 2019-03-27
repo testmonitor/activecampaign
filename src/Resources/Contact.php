@@ -5,7 +5,7 @@ namespace ByTestGear\ActiveCampaign\Resources;
 class Contact extends Resource
 {
     /**
-     * The id of the rule.
+     * The id of the contact.
      *
      * @var integer
      */

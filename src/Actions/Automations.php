@@ -19,4 +19,22 @@ trait Automations
             'automations'
         );
     }
+
+    /**
+     * Find or create an automation.
+     *
+     * @param $name
+     *
+     * @return bool|mixed
+     */
+    public function findAutomation($name)
+    {
+        $automations = $this->automations($name);
+
+        if (count($automations)) {
+            return false;
+        }
+
+        return array_pop($automations);
+    }
 }

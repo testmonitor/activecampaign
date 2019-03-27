@@ -12,13 +12,29 @@ trait Contacts
      *
      * @return array
      */
-    public function contacts($email = null)
+    public function contacts()
     {
         return $this->transformCollection(
+            $this->get('contacts'),
+            Contact::class,
+            'contacts'
+        );
+    }
+
+    /**
+     * Get all contacts.
+     *
+     * @return array
+     */
+    public function findContact($email = null)
+    {
+        $contacts = $this->transformCollection(
             $this->get('contacts', ['query' => ['email' => $email]]),
             Contact::class,
             'contacts'
         );
+
+        return array_pop($contacts);
     }
 
     /**
@@ -81,5 +97,25 @@ trait Contacts
         foreach ($contactAutomations as $contactAutomation) {
             $this->delete("contactAutomations/{$contactAutomation->id}");
         }
+    }
+
+    /**
+     * Find or create a contact.
+     *
+     * @param array $details
+     *
+     * @return mixed
+     */
+    public function findOrCreateContact(array $details = [])
+    {
+        $contact = $this->findContact($details['email']);
+
+        if (empty($contact)) {
+            $this->createContact($details);
+
+            return $this->findContact($details['email']);
+        }
+
+        return $contact;
     }
 }

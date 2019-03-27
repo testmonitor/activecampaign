@@ -8,17 +8,33 @@ use ByTestGear\ActiveCampaign\Resources\CustomField;
 trait CustomFields
 {
     /**
+     * Get all custom fields.
+     *
+     * @return array
+     */
+    public function customFields()
+    {
+        return $this->transformCollection(
+            $this->get('fields'),
+            CustomField::class,
+            'fields'
+        );
+    }
+
+    /**
      * Get all organizations.
      *
      * @return array
      */
-    public function customFields($query = null)
+    public function findCustomField($query = null)
     {
-        return $this->transformCollection(
+        $customFields =  $this->transformCollection(
             $this->get('fields', ['query' => ['search' => $query]]),
             CustomField::class,
             'fields'
         );
+
+        return array_pop($customFields);
     }
 
     /**

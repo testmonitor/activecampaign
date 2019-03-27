@@ -7,7 +7,7 @@ class Organization extends Resource
     /**
      * The id of the organization.
      *
-     * @var integer
+     * @var int
      */
     public $id;
 

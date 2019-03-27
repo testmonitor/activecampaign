@@ -7,21 +7,21 @@ class ContactAutomation extends Resource
     /**
      * The id of the contact automation.
      *
-     * @var integer
+     * @var int
      */
     public $id;
 
     /**
      * Contact ID.
      *
-     * @var integer
+     * @var int
      */
     public $contact;
 
     /**
      * Automation ID.
      *
-     * @var integer
+     * @var int
      */
     public $automation;
 }

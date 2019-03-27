@@ -2,11 +2,11 @@
 
 namespace ByTestGear\ActiveCampaign\Actions;
 
+use ByTestGear\ActiveCampaign\Resources\Tag;
 use ByTestGear\ActiveCampaign\Resources\Contact;
 use ByTestGear\ActiveCampaign\Resources\Automation;
-use ByTestGear\ActiveCampaign\Resources\ContactAutomation;
 use ByTestGear\ActiveCampaign\Resources\ContactTag;
-use ByTestGear\ActiveCampaign\Resources\Tag;
+use ByTestGear\ActiveCampaign\Resources\ContactAutomation;
 
 trait ManagesContacts
 {

@@ -35,7 +35,6 @@ trait MakesHttpRequests
      * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
      * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
      * @return mixed
-     *
      */
     private function post($uri, array $payload = [])
     {
@@ -52,7 +51,6 @@ trait MakesHttpRequests
      * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
      * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
      * @return mixed
-     *
      */
     private function put($uri, array $payload = [])
     {
@@ -69,7 +67,6 @@ trait MakesHttpRequests
      * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
      * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
      * @return mixed
-     *
      */
     private function delete($uri, array $payload = [])
     {
@@ -87,7 +84,6 @@ trait MakesHttpRequests
      * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
      * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
      * @return mixed
-     *
      */
     private function request($verb, $uri, array $payload = [])
     {
@@ -97,7 +93,7 @@ trait MakesHttpRequests
             $payload
         );
 
-        if (!in_array($response->getStatusCode(), [200, 201])) {
+        if (! in_array($response->getStatusCode(), [200, 201])) {
             return $this->handleRequestError($response);
         }
 
@@ -114,7 +110,6 @@ trait MakesHttpRequests
      * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
      * @throws \Exception
      * @return void
-     *
      */
     private function handleRequestError(ResponseInterface $response)
     {

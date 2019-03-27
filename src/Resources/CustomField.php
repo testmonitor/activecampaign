@@ -7,7 +7,7 @@ class CustomField extends Resource
     /**
      * The id of the custom field.
      *
-     * @var integer
+     * @var int
      */
     public $id;
 

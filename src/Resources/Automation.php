@@ -7,7 +7,7 @@ class Automation extends Resource
     /**
      * The id of the automation.
      *
-     * @var integer
+     * @var int
      */
     public $id;
 

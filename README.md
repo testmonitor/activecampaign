@@ -4,7 +4,7 @@
 [![CircleCI](https://img.shields.io/circleci/project/github/byTestGear/activecampaign.svg)](https://circleci.com/gh/byTestGear/activecampaign)
 [![Travis Build](https://travis-ci.org/byTestGear/activecampaign.svg?branch=master)](https://travis-ci.org/byTestGear/activecampaign)
 [![Code Quality](https://scrutinizer-ci.com/g/byTestGear/activecampaign/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/byTestGear/activecampaign/?branch=master)
-[![StyleCI](https://styleci.io/repos/89096388/shield)](https://styleci.io/repos/89096388)
+[![StyleCI](https://styleci.io/repos/176945288/shield)](https://styleci.io/repos/176945288)
 [![License](https://poser.pugx.org/bytestgear/activecampaign/license)](https://packagist.org/packages/activecampaign)
 
 This package provides a PHP SDK for the ActiveCampaign API (v3).

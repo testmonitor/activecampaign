@@ -22,7 +22,7 @@
             "role": "Developer"
         }
     ],
-    "license": "proprietary",
+    "license": "MIT",
     "type": "package",
     "require": {
         "php": ">=7.1.3",

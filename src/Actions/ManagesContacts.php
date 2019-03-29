@@ -27,17 +27,17 @@ trait ManagesContacts
      *
      * @param string $email
      *
-     * @return array
+     * @return Contact|null
      */
     public function findContact($email)
     {
-        $organizations = $this->transformCollection(
+        $contacts = $this->transformCollection(
             $this->get('contacts', ['query' => ['email' => $email]]),
             Contact::class,
             'contacts'
         );
 
-        return array_shift($organizations);
+        return array_shift($contacts);
     }
 
     /**
@@ -45,7 +45,7 @@ trait ManagesContacts
      *
      * @param array $data
      *
-     * @return Contact
+     * @return Contact|null
      */
     public function createContact(array $data = [])
     {

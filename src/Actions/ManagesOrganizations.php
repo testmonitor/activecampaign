@@ -25,7 +25,7 @@ trait ManagesOrganizations
      *
      * @param string $name
      *
-     * @return array
+     * @return Organization|null
      */
     public function findOrganization($name)
     {
@@ -43,7 +43,7 @@ trait ManagesOrganizations
      *
      * @param array $data
      *
-     * @return Organization
+     * @return Organization|null
      */
     public function createOrganization(array $data = [])
     {

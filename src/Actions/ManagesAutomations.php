@@ -25,7 +25,7 @@ trait ManagesAutomations
      *
      * @param string $name
      *
-     * @return array
+     * @return Automation|null
      */
     public function findAutomation($name)
     {

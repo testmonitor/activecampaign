@@ -45,14 +45,17 @@ trait ManagesContacts
     /**
      * Create new contact.
      *
-     * @param array $data
+     * @param string $email
+     * @param string $firstName
+     * @param string $lastName
+     * @param int|null $orgid
      *
      * @return Contact|null
      */
-    public function createContact(array $data = [])
+    public function createContact($email, $firstName, $lastName, $orgid = null)
     {
         $contacts = $this->transformCollection(
-            $this->post('contacts', ['json' => ['contact' => $data]]),
+            $this->post('contacts', ['json' => ['contact' => compact('email', 'firstName', 'lastName', 'orgid')]]),
             Contact::class
         );
 
@@ -65,11 +68,11 @@ trait ManagesContacts
      * @param string $email
      * @param string $firstName
      * @param string $lastName
-     * @param int $orgid
+     * @param int|null $orgid
      *
      * @return Contact
      */
-    public function findOrCreateContact($email, $firstName, $lastName, $orgid)
+    public function findOrCreateContact($email, $firstName, $lastName, $orgid = null)
     {
         $contact = $this->findContact($email);
 
@@ -77,7 +80,7 @@ trait ManagesContacts
             return $contact;
         }
 
-        return $this->createContact(compact('email', 'firstName', 'lastName', 'orgid'));
+        return $this->createContact($email, $firstName, $lastName, $orgid);
     }
 
     /**

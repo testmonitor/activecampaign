@@ -1,9 +1,9 @@
 <?php
 
-namespace ByTestGear\ActiveCampaign\Actions;
+namespace TestMonitor\ActiveCampaign\Actions;
 
-use ByTestGear\ActiveCampaign\Resources\Contact;
-use ByTestGear\ActiveCampaign\Resources\CustomField;
+use TestMonitor\ActiveCampaign\Resources\Contact;
+use TestMonitor\ActiveCampaign\Resources\CustomField;
 
 trait ManagesCustomFields
 {
@@ -42,8 +42,8 @@ trait ManagesCustomFields
     /**
      * Add custom field value to contact.
      *
-     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
-     * @param \ByTestGear\ActiveCampaign\Resources\CustomField $customField
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\CustomField $customField
      * @param $value
      *
      * @return Contact

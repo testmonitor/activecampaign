@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTestGear\ActiveCampaign\Actions;
+namespace TestMonitor\ActiveCampaign\Actions;
 
-use ByTestGear\ActiveCampaign\Resources\Tag;
-use ByTestGear\ActiveCampaign\Resources\Contact;
-use ByTestGear\ActiveCampaign\Resources\Automation;
-use ByTestGear\ActiveCampaign\Resources\ContactTag;
-use ByTestGear\ActiveCampaign\Resources\ContactAutomation;
+use TestMonitor\ActiveCampaign\Resources\Tag;
+use TestMonitor\ActiveCampaign\Resources\Contact;
+use TestMonitor\ActiveCampaign\Resources\Automation;
+use TestMonitor\ActiveCampaign\Resources\ContactTag;
+use TestMonitor\ActiveCampaign\Resources\ContactAutomation;
 
 trait ManagesContacts
 {
@@ -86,7 +86,7 @@ trait ManagesContacts
     /**
      * Get all automations of a contact.
      *
-     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
      *
      * @return array
      */
@@ -102,7 +102,7 @@ trait ManagesContacts
     /**
      * Get all tags of a contact.
      *
-     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
      *
      * @return array
      */
@@ -118,8 +118,8 @@ trait ManagesContacts
     /**
      * Removing a automation from a contact.
      *
-     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
-     * @param \ByTestGear\ActiveCampaign\Resources\Automation $automation
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\Automation $automation
      */
     public function removeAutomationFromContact(Contact $contact, Automation $automation)
     {
@@ -139,7 +139,7 @@ trait ManagesContacts
     /**
      * Removing all automations from a contact.
      *
-     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
      */
     public function removeAllAutomationsFromContact(Contact $contact)
     {
@@ -153,8 +153,8 @@ trait ManagesContacts
     /**
      * Removing a tag from a contact.
      *
-     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
-     * @param \ByTestGear\ActiveCampaign\Resources\Tag $tag
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\Tag $tag
      */
     public function removeTagFromContact(Contact $contact, Tag $tag)
     {

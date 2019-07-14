@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTestGear\ActiveCampaign\Resources;
+namespace TestMonitor\ActiveCampaign\Resources;
 
 class Resource
 {
@@ -14,7 +14,7 @@ class Resource
     /**
      * The ActiveCampaign SDK instance.
      *
-     * @var \ByTestGear\ActiveCampaign\ActiveCampaign
+     * @var \TestMonitor\ActiveCampaign\ActiveCampaign
      */
     protected $activeCampaign;
 
@@ -22,7 +22,7 @@ class Resource
      * Create a new resource instance.
      *
      * @param  array $attributes
-     * @param  \ByTestGear\ActiveCampaign\ActiveCampaign $activeCampaign
+     * @param  \TestMonitor\ActiveCampaign\ActiveCampaign $activeCampaign
      * @return void
      */
     public function __construct(array $attributes, $activeCampaign = null)

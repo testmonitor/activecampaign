@@ -1,15 +1,15 @@
 <?php
 
-namespace ByTestGear\ActiveCampaign;
+namespace TestMonitor\ActiveCampaign;
 
 use GuzzleHttp\Client as HttpClient;
-use ByTestGear\ActiveCampaign\Actions\ManagesTags;
-use ByTestGear\ActiveCampaign\Actions\ManagesContacts;
-use ByTestGear\ActiveCampaign\Actions\ManagesAutomations;
-use ByTestGear\ActiveCampaign\Actions\ManagesContactTags;
-use ByTestGear\ActiveCampaign\Actions\ManagesCustomFields;
-use ByTestGear\ActiveCampaign\Actions\ManagesOrganizations;
-use ByTestGear\ActiveCampaign\Actions\ManagesContactAutomations;
+use TestMonitor\ActiveCampaign\Actions\ManagesTags;
+use TestMonitor\ActiveCampaign\Actions\ManagesContacts;
+use TestMonitor\ActiveCampaign\Actions\ManagesAutomations;
+use TestMonitor\ActiveCampaign\Actions\ManagesContactTags;
+use TestMonitor\ActiveCampaign\Actions\ManagesCustomFields;
+use TestMonitor\ActiveCampaign\Actions\ManagesOrganizations;
+use TestMonitor\ActiveCampaign\Actions\ManagesContactAutomations;
 
 class ActiveCampaign
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace ByTestGear\ActiveCampaign\Actions;
+namespace TestMonitor\ActiveCampaign\Actions;
 
-use ByTestGear\ActiveCampaign\Resources\Organization;
+use TestMonitor\ActiveCampaign\Resources\Organization;
 
 trait ManagesOrganizations
 {

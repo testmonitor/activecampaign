@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTestGear\ActiveCampaign\Resources;
+namespace TestMonitor\ActiveCampaign\Resources;
 
 class CustomField extends Resource
 {

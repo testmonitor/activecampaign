@@ -1,11 +1,11 @@
 <?php
 
-namespace ByTestGear\ActiveCampaign;
+namespace TestMonitor\ActiveCampaign;
 
 use Psr\Http\Message\ResponseInterface;
-use ByTestGear\ActiveCampaign\Exceptions\NotFoundException;
-use ByTestGear\ActiveCampaign\Exceptions\ValidationException;
-use ByTestGear\ActiveCampaign\Exceptions\FailedActionException;
+use TestMonitor\ActiveCampaign\Exceptions\NotFoundException;
+use TestMonitor\ActiveCampaign\Exceptions\ValidationException;
+use TestMonitor\ActiveCampaign\Exceptions\FailedActionException;
 
 trait MakesHttpRequests
 {
@@ -15,9 +15,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param array $payload
      *
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -32,9 +32,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -49,9 +49,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -66,9 +66,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -84,9 +84,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -110,9 +110,9 @@ trait MakesHttpRequests
     /**
      * @param  \Psr\Http\Message\ResponseInterface $response
      *
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\ValidationException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \ByTestGear\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
      * @throws \Exception
      *
      * @return void

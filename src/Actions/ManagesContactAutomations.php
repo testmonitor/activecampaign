@@ -1,17 +1,17 @@
 <?php
 
-namespace ByTestGear\ActiveCampaign\Actions;
+namespace TestMonitor\ActiveCampaign\Actions;
 
-use ByTestGear\ActiveCampaign\Resources\Contact;
-use ByTestGear\ActiveCampaign\Resources\Automation;
+use TestMonitor\ActiveCampaign\Resources\Contact;
+use TestMonitor\ActiveCampaign\Resources\Automation;
 
 trait ManagesContactAutomations
 {
     /**
      * Get all organizations.
      *
-     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
-     * @param \ByTestGear\ActiveCampaign\Resources\Automation $automation
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\Automation $automation
      *
      * @return array
      */

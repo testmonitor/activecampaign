@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/byTestGear/laravel-accountable).
+We accept contributions via Pull Requests on [Github](https://github.com/testmonitor/laravel-accountable).
 
 
 ## Pull Requests

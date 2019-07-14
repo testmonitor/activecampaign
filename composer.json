@@ -1,6 +1,6 @@
 {
     "name": "testmonitor/activecampaign",
-    "description": "Active Campaign API connector for APIv3",
+    "description": "ActiveCampaign API connector for APIv3",
     "keywords": ["activecampaign", "active", "campaign", "api"],
     "authors": [
         {
@@ -40,7 +40,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ByTestGear\\ActiveCampaign\\": "src/"
+            "TestMonitor\\ActiveCampaign\\": "src/"
         }
     }
 }

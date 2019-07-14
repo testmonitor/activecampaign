@@ -1,17 +1,17 @@
 <?php
 
-namespace ByTestGear\ActiveCampaign\Actions;
+namespace TestMonitor\ActiveCampaign\Actions;
 
-use ByTestGear\ActiveCampaign\Resources\Tag;
-use ByTestGear\ActiveCampaign\Resources\Contact;
+use TestMonitor\ActiveCampaign\Resources\Tag;
+use TestMonitor\ActiveCampaign\Resources\Contact;
 
 trait ManagesContactTags
 {
     /**
      * Add tag to contact.
      *
-     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
-     * @param \ByTestGear\ActiveCampaign\Resources\Tag $tag
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\Tag $tag
      *
      * @return array
      */
@@ -29,7 +29,7 @@ trait ManagesContactTags
     }
 
     /**
-     * @param \ByTestGear\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
      * @param array $tags
      */
     public function addTagsToContact(Contact $contact, array $tags)

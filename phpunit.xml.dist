@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="TestGear Test Suite">
+        <testsuite name="TestMonitor Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>

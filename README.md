@@ -1,11 +1,11 @@
 # ActiveCampaign PHP SDK
 
-[![Latest Stable Version](https://poser.pugx.org/bytestgear/activecampaign/v/stable)](https://packagist.org/packages/bytestgear/activecampaign)
-[![CircleCI](https://img.shields.io/circleci/project/github/byTestGear/activecampaign.svg)](https://circleci.com/gh/byTestGear/activecampaign)
-[![Travis Build](https://travis-ci.org/byTestGear/activecampaign.svg?branch=master)](https://travis-ci.org/byTestGear/activecampaign)
-[![Code Quality](https://scrutinizer-ci.com/g/byTestGear/activecampaign/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/byTestGear/activecampaign/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/testmonitor/activecampaign/v/stable)](https://packagist.org/packages/testmonitor/activecampaign)
+[![CircleCI](https://img.shields.io/circleci/project/github/testmonitor/activecampaign.svg)](https://circleci.com/gh/testmonitor/activecampaign)
+[![Travis Build](https://travis-ci.org/testmonitor/activecampaign.svg?branch=master)](https://travis-ci.org/testmonitor/activecampaign)
+[![Code Quality](https://scrutinizer-ci.com/g/testmonitor/activecampaign/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/testmonitor/activecampaign/?branch=master)
 [![StyleCI](https://styleci.io/repos/176945288/shield)](https://styleci.io/repos/176945288)
-[![License](https://poser.pugx.org/bytestgear/activecampaign/license)](https://packagist.org/packages/bytestgear/activecampaign)
+[![License](https://poser.pugx.org/testmonitor/activecampaign/license)](https://packagist.org/packages/testmonitor/activecampaign)
 
 This package provides a PHP SDK for the ActiveCampaign API (v3).
 
@@ -28,7 +28,7 @@ For more information on the ActiveCampaign API, refer to their [developer docume
 This package can be installed through Composer:
 
 ```sh
-$ composer require bytestgear/activecampaign
+$ composer require testmonitor/activecampaign
 ```
 
 Make sure to use Composer's autoload:

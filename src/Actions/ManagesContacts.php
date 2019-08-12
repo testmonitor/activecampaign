@@ -84,6 +84,23 @@ trait ManagesContacts
     }
 
     /**
+     * Updates a contact by its ActiveCampaign ID.
+     *
+     * @param      $id
+     * @param      $email
+     * @param      $firstName
+     * @param      $lastName
+     * @param null $orgid
+     *
+     * @return Contact|null
+     */
+    public function updateContactById($id, $email, $firstName, $lastName, $orgid = null)
+    {
+        $this->put('contacts/' . $id, ['json' => ['contact' => compact('email', 'firstName', 'lastName', 'orgid')]]);
+        return $this->findContactById($id);
+    }
+
+    /**
      * Get all automations of a contact.
      *
      * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact

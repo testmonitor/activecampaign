@@ -97,6 +97,7 @@ trait ManagesContacts
     public function updateContactById($id, $email, $firstName, $lastName, $orgid = null)
     {
         $this->put('contacts/'.$id, ['json' => ['contact' => compact('email', 'firstName', 'lastName', 'orgid')]]);
+
         return $this->findContactById($id);
     }
 

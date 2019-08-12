@@ -41,7 +41,7 @@ trait ManagesContacts
 
         return array_shift($contacts);
     }
-    
+
     /**
      * Find contact by ID.
      *

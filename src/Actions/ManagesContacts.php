@@ -43,7 +43,7 @@ trait ManagesContacts
     }
     
     /**
-     * Find contact by ID
+     * Find contact by ID.
      *
      * @param int $id
      *

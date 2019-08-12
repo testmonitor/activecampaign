@@ -120,6 +120,18 @@ trait ManagesContacts
     }
 
     /**
+     * Deletes a contact by its ActiveCampaign ID.
+     *
+     * @param int $id
+     *
+     * @return Contact|null
+     */
+    public function deleteContactById($idl)
+    {
+        $this->delete('contacts/'.$id);
+    }
+
+    /**
      * Get all automations of a contact.
      *
      * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact

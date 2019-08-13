@@ -77,6 +77,8 @@ trait ManagesTags
      * Find or create a tag.
      *
      * @param string $name
+     * @param string $type
+     * @param string $description
      *
      * @return Tag
      */

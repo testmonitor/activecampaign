@@ -133,6 +133,7 @@ trait ManagesTags
             return (int) $tag;
         } else {
             $tag = $this->findTag($tag);
+
             return $tag->id;
         }
     }

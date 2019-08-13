@@ -232,6 +232,7 @@ trait ManagesContacts
             return (int) $contact;
         } else {
             $contact = $this->findContact($contact);
+
             return $contact->id;
         }
     }

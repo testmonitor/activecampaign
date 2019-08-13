@@ -102,33 +102,33 @@ trait ManagesContacts
     }
 
     /**
-     * Updates a contact by its ActiveCampaign ID.
+     * Updates a contact.
      *
-     * @param      $id
-     * @param      $email
-     * @param      $firstName
-     * @param      $lastName
-     * @param null $orgid
+     * @param Contact|int|string $id
+     * @param string|null        $email
+     * @param string|null        $firstName
+     * @param string|null        $lastName
+     * @param null               $orgid
      *
      * @return Contact|null
      */
-    public function updateContactById($id, $email, $firstName, $lastName, $orgid = null)
+    public function updateContact($id, $email, $firstName, $lastName, $orgid = null)
     {
+        $id = $this->getContactId($id);
+
         $this->put('contacts/'.$id, ['json' => ['contact' => compact('email', 'firstName', 'lastName', 'orgid')]]);
 
         return $this->findContactById($id);
     }
 
     /**
-     * Deletes a contact by its ActiveCampaign ID.
+     * Deletes a contact.
      *
-     * @param int $id
-     *
-     * @return Contact|null
+     * @param Contact|int|string $contact
      */
-    public function deleteContactById($idl)
+    public function deleteContact($contact)
     {
-        $this->delete('contacts/'.$id);
+        $this->delete('contacts/'.$this->getContactId($contact));
     }
 
     /**
@@ -217,5 +217,22 @@ trait ManagesContacts
         }
 
         $this->delete("contactTags/{$contactTag->id}");
+    }
+
+    /**
+     * Determines the contact ID.
+     *
+     * @param Contact|int|string $contact
+     */
+    protected function getContactId($contact)
+    {
+        if ($contact instanceof Contact) {
+            return $contact->id;
+        } elseif (is_numeric($contact)) {
+            return (int) $contact;
+        } else {
+            $contact = $this->findContact($contact);
+            return $contact->id;
+        }
     }
 }

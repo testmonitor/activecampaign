@@ -77,12 +77,12 @@ trait ManagesTags
      * Find or create a tag.
      *
      * @param string $name
-     * @param string $type
+     * @param string $tagType
      * @param string $description
      *
      * @return Tag
      */
-    public function findOrCreateTag($name, $type = 'contact', $description = null)
+    public function findOrCreateTag($name, $tagType = 'contact', $description = null)
     {
         $tag = $this->findTag($name);
 
@@ -90,7 +90,7 @@ trait ManagesTags
             return $tag;
         }
 
-        return $this->createTag(['tag' => $name, 'tagType' => $type, 'description' => $description]);
+        return $this->createTag(['tag' => $name, 'tagType' => $tagType, 'description' => $description]);
     }
 
     /**

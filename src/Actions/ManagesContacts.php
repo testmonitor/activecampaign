@@ -51,13 +51,8 @@ trait ManagesContacts
      */
     public function findContactById($id)
     {
-        $contacts = $this->transformCollection(
-            $this->get('contacts', ['query' => ['id' => $id]]),
-            Contact::class,
-            'contacts'
-        );
-
-        return array_shift($contacts);
+        $contact = (object) $this->get('contacts/'.$id);
+        return new Contact($contact->contact);
     }
 
     /**

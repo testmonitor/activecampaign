@@ -47,13 +47,8 @@ trait ManagesTags
      */
     public function findTagById($id)
     {
-        $tags = $this->transformCollection(
-            $this->get('tags', ['query' => ['id' => $id]]),
-            Tag::class,
-            'tags'
-        );
-
-        return array_shift($tags);
+        $tag = (object) $this->get('tags/'.$id);
+        return new Tag($tag->tag);
     }
 
     /**

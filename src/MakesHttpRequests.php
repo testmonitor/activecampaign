@@ -7,6 +7,12 @@ use TestMonitor\ActiveCampaign\Exceptions\NotFoundException;
 use TestMonitor\ActiveCampaign\Exceptions\ValidationException;
 use TestMonitor\ActiveCampaign\Exceptions\FailedActionException;
 
+/**
+ * Class MakesHttpRequests
+ * @package TestMonitor\ActiveCampaign
+ *
+ * @property \GuzzleHttp\Client $guzzle
+ */
 trait MakesHttpRequests
 {
     /**

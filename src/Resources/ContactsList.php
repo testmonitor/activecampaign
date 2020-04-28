@@ -86,10 +86,6 @@ class ContactsList extends Resource
      */
     public function contacts()
     {
-        return $this->activeCampaign->transformCollection(
-            $this->activeCampaign->get('contacts', ['query' => ['listid' => $this->id]]),
-            Contact::class,
-            'contacts'
-        );
+        return $this->activeCampaign->contactsByList($this->id);
     }
 }

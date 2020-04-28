@@ -30,4 +30,14 @@ class Contact extends Resource
      * @var int
      */
     public $orgid;
+
+    public function subscribe($list)
+    {
+        $this->activeCampaign->subscribe($this->id, $list);
+    }
+
+    public function unsubscribe($list)
+    {
+        $this->activeCampaign->unsubscribe($this->id, $list);
+    }
 }

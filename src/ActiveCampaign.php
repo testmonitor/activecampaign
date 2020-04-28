@@ -80,7 +80,7 @@ class ActiveCampaign
      *
      * @return array
      */
-    public function transformCollection($collection, $class, $key = '', $extraData = [])
+    protected function transformCollection($collection, $class, $key = '', $extraData = [])
     {
         return array_map(function ($data) use ($class, $extraData) {
             return new $class($data + $extraData, $this);

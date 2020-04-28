@@ -27,7 +27,7 @@ trait MakesHttpRequests
      *
      * @return mixed
      */
-    public function get($uri, $payload = [])
+    private function get($uri, $payload = [])
     {
         return $this->request('GET', $uri, $payload);
     }
@@ -44,7 +44,7 @@ trait MakesHttpRequests
      *
      * @return mixed
      */
-    public function post($uri, array $payload = [])
+    private function post($uri, array $payload = [])
     {
         return $this->request('POST', $uri, $payload);
     }
@@ -61,7 +61,7 @@ trait MakesHttpRequests
      *
      * @return mixed
      */
-    public function put($uri, array $payload = [])
+    private function put($uri, array $payload = [])
     {
         return $this->request('PUT', $uri, $payload);
     }
@@ -78,7 +78,7 @@ trait MakesHttpRequests
      *
      * @return mixed
      */
-    public function delete($uri, array $payload = [])
+    private function delete($uri, array $payload = [])
     {
         return $this->request('DELETE', $uri, $payload);
     }

@@ -2,6 +2,7 @@
 
 namespace TestMonitor\ActiveCampaign\Actions;
 
+use TestMonitor\ActiveCampaign\Resources\Contact;
 use TestMonitor\ActiveCampaign\Resources\ContactsList;
 
 trait ManagesLists
@@ -103,4 +104,49 @@ trait ManagesLists
         $this->delete('lists/' . $id);
     }
 
+    /**
+     * Adds contact to the list
+     *
+     * @param int $contactId ID of contact to add to list
+     * @param int $listId    ID of list to add contact to
+     */
+    public function subscribe($contactId, $listId)
+    {
+        $this->post('contactLists', ['json' => [
+            'contactList' => [
+                'list' => $listId,
+                'contact' => $contactId,
+                'status' => 1,
+            ]]]);
+    }
+
+    /**
+     * Remove contact from the list
+     *
+     * @param int $contactId ID of contact to remove from list
+     * @param int $listId ID of list to remove contact from
+     */
+    public function unsubscribe($contactId, $listId)
+    {
+        $this->post('contactLists', ['json' => [
+            'contactList' => [
+                'list' => $listId,
+                'contact' => $contactId,
+                'status' => 2,
+            ]]]);
+    }
+
+    /**
+     * Get all contacts related to the list.
+     *
+     * @return Contact[]
+     */
+    public function contactsByList($listId)
+    {
+        return $this->transformCollection(
+            $this->get('contacts', ['query' => ['listid' => $listId]]),
+            Contact::class,
+            'contacts'
+        );
+    }
 }

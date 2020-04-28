@@ -11,6 +11,7 @@ use TestMonitor\ActiveCampaign\Actions\ManagesCustomFields;
 use TestMonitor\ActiveCampaign\Actions\ManagesOrganizations;
 use TestMonitor\ActiveCampaign\Actions\ManagesContactAutomations;
 use TestMonitor\ActiveCampaign\Actions\ManagesEvents;
+use TestMonitor\ActiveCampaign\Actions\ManagesLists;
 
 class ActiveCampaign
 {
@@ -22,7 +23,8 @@ class ActiveCampaign
         ManagesContactAutomations,
         ManagesCustomFields,
         ManagesOrganizations,
-        ManagesEvents;
+        ManagesEvents,
+        ManagesLists;
 
     /**
      * The ActiveCampaign base url.
@@ -78,7 +80,7 @@ class ActiveCampaign
      *
      * @return array
      */
-    protected function transformCollection($collection, $class, $key = '', $extraData = [])
+    public function transformCollection($collection, $class, $key = '', $extraData = [])
     {
         return array_map(function ($data) use ($class, $extraData) {
             return new $class($data + $extraData, $this);

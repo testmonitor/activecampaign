@@ -2,14 +2,13 @@
 
 namespace TestMonitor\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Actions\Action;
 use TestMonitor\ActiveCampaign\Resources\Contact;
 use TestMonitor\ActiveCampaign\Resources\ContactsList;
 
 trait ManagesLists
 {
     use Action;
-    
+
     /**
      * Returns all lists.
      *
@@ -42,7 +41,6 @@ trait ManagesLists
         } catch (\TestMonitor\ActiveCampaign\Exceptions\NotFoundException $e) {
             // return null if list not foun
         }
-        return null;
     }
 
     /**
@@ -130,5 +128,5 @@ trait ManagesLists
             Contact::class,
             'contacts'
         );
-    }    
+    }
 }

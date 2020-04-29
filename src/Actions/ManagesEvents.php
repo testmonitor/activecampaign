@@ -2,7 +2,6 @@
 
 namespace TestMonitor\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Actions\Action;
 use TestMonitor\ActiveCampaign\Resources\Event;
 
 trait ManagesEvents

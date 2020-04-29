@@ -34,7 +34,7 @@ class ContactsList extends Resource
 
     /**
      * A reminder for your contacts as to why they are on this list and you are messaging them.
-     * For example: 'You signed up for my mailing list.'
+     * For example: 'You signed up for my mailing list.'.
      *
      * @var string
      */

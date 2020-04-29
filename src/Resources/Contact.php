@@ -33,11 +33,11 @@ class Contact extends Resource
 
     public function subscribe($list)
     {
-        $this->activeCampaign->subscribe($this->id, $list);
+        $this->activeCampaign->updateListStatus($list, $this->id, true);
     }
 
     public function unsubscribe($list)
     {
-        $this->activeCampaign->unsubscribe($this->id, $list);
+        $this->activeCampaign->updateListStatus($list, $this->id, false);
     }
 }

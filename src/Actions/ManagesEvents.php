@@ -2,10 +2,13 @@
 
 namespace TestMonitor\ActiveCampaign\Actions;
 
+use TestMonitor\ActiveCampaign\Actions\Action;
 use TestMonitor\ActiveCampaign\Resources\Event;
 
 trait ManagesEvents
 {
+    use Action;
+
     /**
      * This value is unique to ActiveCampaign account and can be found named "Event Key"
      * on Settings > Tracking > Event Tracking inside ActiveCampaign account.
@@ -23,7 +26,7 @@ trait ManagesEvents
     public $actid;
 
     /**
-     * Creates a new event (name only)
+     * Creates a new event (name only).
      *
      * @param string $name
      *
@@ -41,7 +44,7 @@ trait ManagesEvents
     }
 
     /**
-     * List all events
+     * List all events.
      *
      * @return Event[]
      */
@@ -55,7 +58,7 @@ trait ManagesEvents
     }
 
     /**
-     * List name of all events
+     * List name of all events.
      *
      * @return Event[]
      */
@@ -63,12 +66,14 @@ trait ManagesEvents
     {
         $events = $this->get('eventTrackingEvents');
 
-        return array_map(function ($data) { return $data['name']; },
+        return array_map(function ($data) {
+            return $data['name'];
+        },
             $events['eventTrackingEvents'] ?? $events);
     }
 
     /**
-     * Removes an existing event tracking event (name only)
+     * Removes an existing event tracking event (name only).
      *
      * @param $name
      *
@@ -76,11 +81,11 @@ trait ManagesEvents
      */
     public function deleteEvent($name)
     {
-        $this->delete('eventTrackingEvents/' . $name);
+        $this->delete('eventTrackingEvents/'.$name);
     }
 
     /**
-     * Tracks an event by name
+     * Tracks an event by name.
      *
      * @param string $name      name of the event to track
      * @param string $email     email address of the contact to track this event for, optional
@@ -103,17 +108,16 @@ trait ManagesEvents
         ] + ($email ? ['visit' => json_encode(['email' => $email])] : []));
 
         $result = curl_exec($curl);
-        if ($result !== false)
-        {
+        if ($result !== false) {
             curl_close($curl);
             $result = json_decode($result);
 
-            if (isset($result->success) && $result->success) return true;
+            if (isset($result->success) && $result->success) {
+                return true;
+            }
 
             return false;
-        }
-        else
-        {
+        } else {
             throw new \TestMonitor\ActiveCampaign\Exceptions\FailedActionException(curl_error($curl));
         }
     }

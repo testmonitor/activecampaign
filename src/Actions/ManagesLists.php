@@ -2,13 +2,16 @@
 
 namespace TestMonitor\ActiveCampaign\Actions;
 
+use TestMonitor\ActiveCampaign\Actions\Action;
 use TestMonitor\ActiveCampaign\Resources\Contact;
 use TestMonitor\ActiveCampaign\Resources\ContactsList;
 
 trait ManagesLists
 {
+    use Action;
+    
     /**
-     * Returns all lists
+     * Returns all lists.
      *
      * @return ContactsList[]
      */
@@ -22,32 +25,28 @@ trait ManagesLists
     }
 
     /**
-     * Returns list by ID
+     * Returns list by ID.
      *
-     * @param string $name
+     * @param string $id
      *
      * @return ContactsList|null
      */
     public function getList($id)
     {
-        try
-        {
-            $lists = $this->get('lists/' . $id);
+        try {
+            $lists = $this->get('lists/'.$id);
 
-            if (isset($lists['list']) && count($lists['list']))
-            {
+            if (isset($lists['list']) && count($lists['list'])) {
                 return new ContactsList($lists['list']);
             }
+        } catch (\TestMonitor\ActiveCampaign\Exceptions\NotFoundException $e) {
+            // return null if list not foun
         }
-        catch (\TestMonitor\ActiveCampaign\Exceptions\NotFoundException $e)
-        {
-        }
-
         return null;
     }
 
     /**
-     * Finds list by it's name or URL-safe name
+     * Finds list by it's name or URL-safe name.
      *
      * @param string $name name of list to find
      *
@@ -65,7 +64,7 @@ trait ManagesLists
     }
 
     /**
-     * Creates a new list
+     * Creates a new list.
      *
      * @param string $name Name of the list to create
      * @param string $senderUrl The website URL this list is for.
@@ -76,8 +75,7 @@ trait ManagesLists
     public function createList($name, $senderUrl, $params = [])
     {
         $params['name'] = $name;
-        if (!isset($params['stringid']))
-        {
+        if (! isset($params['stringid'])) {
             $params['stringid'] = strtolower(preg_replace('/[^A-Z0-9]+/i', '-', $name));
         }
         $params['sender_url'] = $senderUrl;
@@ -89,11 +87,10 @@ trait ManagesLists
         );
 
         return array_shift($lists);
-
     }
 
     /**
-     * Removes list
+     * Removes list.
      *
      * @param int $id ID of the list to delete
      *
@@ -101,39 +98,24 @@ trait ManagesLists
      */
     public function deleteList($id)
     {
-        $this->delete('lists/' . $id);
+        $this->delete('lists/'.$id);
     }
 
     /**
-     * Adds contact to the list
+     * Subscribe a contact to a list or unsubscribe a contact from a list.
      *
-     * @param int $contactId ID of contact to add to list
-     * @param int $listId    ID of list to add contact to
+     * @param int $list ID of list to remove contact from
+     * @param int $contact ID of contact to remove from list
+     * @param bool $subscribe TRUE to subscribe, FALSE otherwise
      */
-    public function subscribe($contactId, $listId)
+    public function updateListStatus($list, $contact, $subscribe)
     {
         $this->post('contactLists', ['json' => [
             'contactList' => [
-                'list' => $listId,
-                'contact' => $contactId,
-                'status' => 1,
-            ]]]);
-    }
-
-    /**
-     * Remove contact from the list
-     *
-     * @param int $contactId ID of contact to remove from list
-     * @param int $listId ID of list to remove contact from
-     */
-    public function unsubscribe($contactId, $listId)
-    {
-        $this->post('contactLists', ['json' => [
-            'contactList' => [
-                'list' => $listId,
-                'contact' => $contactId,
-                'status' => 2,
-            ]]]);
+                'list' => $list,
+                'contact' => $contact,
+                'status' => $subscribe ? 1 : 2,
+            ], ]]);
     }
 
     /**
@@ -148,5 +130,5 @@ trait ManagesLists
             Contact::class,
             'contacts'
         );
-    }
+    }    
 }

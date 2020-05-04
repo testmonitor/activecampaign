@@ -7,7 +7,7 @@ use TestMonitor\ActiveCampaign\Resources\ContactsList;
 
 trait ManagesLists
 {
-    use Action;
+    use ImplementsActions;
 
     /**
      * Returns all lists.

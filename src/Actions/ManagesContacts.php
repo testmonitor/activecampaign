@@ -10,6 +10,8 @@ use TestMonitor\ActiveCampaign\Resources\ContactAutomation;
 
 trait ManagesContacts
 {
+    use ImplementsActions;
+
     /**
      * Get all contacts.
      *

@@ -7,7 +7,7 @@ namespace TestMonitor\ActiveCampaign\Actions;
  *
  * Defines methods implemented in MakeHttpRequest and ActiveCampaign that used in traits.
  */
-trait Action
+trait ImplementsActions
 {
     abstract protected function get($uri, $payload = []);
 

@@ -7,6 +7,8 @@ use TestMonitor\ActiveCampaign\Resources\Contact;
 
 trait ManagesContactTags
 {
+    use ImplementsActions;
+
     /**
      * Add tag to contact.
      *

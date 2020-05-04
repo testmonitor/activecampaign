@@ -7,6 +7,8 @@ use TestMonitor\ActiveCampaign\Resources\CustomField;
 
 trait ManagesCustomFields
 {
+    use ImplementsActions;
+
     /**
      * Get all custom fields.
      *

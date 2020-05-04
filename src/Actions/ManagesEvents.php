@@ -6,7 +6,7 @@ use TestMonitor\ActiveCampaign\Resources\Event;
 
 trait ManagesEvents
 {
-    use Action;
+    use ImplementsActions;
 
     /**
      * This value is unique to ActiveCampaign account and can be found named "Event Key"
@@ -14,7 +14,7 @@ trait ManagesEvents
      *
      * @var string
      */
-    public $eventKey;
+    public $trackKey;
 
     /**
      * This value is unique to ActiveCampaign account and can be found named "actid"
@@ -22,7 +22,7 @@ trait ManagesEvents
      *
      * @var string
      */
-    public $actid;
+    public $trackActid;
 
     /**
      * Creates a new event (name only).
@@ -67,8 +67,7 @@ trait ManagesEvents
 
         return array_map(function ($data) {
             return $data['name'];
-        },
-            $events['eventTrackingEvents'] ?? $events);
+        }, $events['eventTrackingEvents'] ?? $events);
     }
 
     /**
@@ -100,8 +99,8 @@ trait ManagesEvents
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, [
-            'actid'     => $this->actid,
-            'key'       => $this->eventKey,
+            'actid'     => $this->trackActid,
+            'key'       => $this->trackKey,
             'event'     => $name,
             'eventdata' => json_encode($eventData),
         ] + ($email ? ['visit' => json_encode(['email' => $email])] : []));

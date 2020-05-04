@@ -7,6 +7,8 @@ use TestMonitor\ActiveCampaign\Resources\Automation;
 
 trait ManagesContactAutomations
 {
+    use ImplementsActions;
+
     /**
      * Get all organizations.
      *

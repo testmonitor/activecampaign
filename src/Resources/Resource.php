@@ -43,7 +43,9 @@ class Resource
         foreach ($this->attributes as $key => $value) {
             $key = $this->camelCase($key);
 
-            $this->{$key} = $value;
+            if (property_exists($this, $key)) {
+                $this->{$key} = $value;
+            }
         }
     }
 

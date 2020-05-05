@@ -2,11 +2,13 @@
 
 namespace TestMonitor\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Tag;
 use TestMonitor\ActiveCampaign\Resources\Contact;
+use TestMonitor\ActiveCampaign\Resources\Tag;
 
 trait ManagesContactTags
 {
+    use ImplementsActions;
+
     /**
      * Add tag to contact.
      *

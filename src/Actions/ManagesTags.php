@@ -6,6 +6,8 @@ use TestMonitor\ActiveCampaign\Resources\Tag;
 
 trait ManagesTags
 {
+    use ImplementsActions;
+
     /**
      * Get all tags.
      *

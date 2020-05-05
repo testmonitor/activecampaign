@@ -6,6 +6,8 @@ use TestMonitor\ActiveCampaign\Resources\Automation;
 
 trait ManagesAutomations
 {
+    use ImplementsActions;
+
     /**
      * Get all automations.
      *

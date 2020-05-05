@@ -6,6 +6,8 @@ use TestMonitor\ActiveCampaign\Resources\Organization;
 
 trait ManagesOrganizations
 {
+    use ImplementsActions;
+
     /**
      * Get all organizations.
      *

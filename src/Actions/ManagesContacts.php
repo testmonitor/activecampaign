@@ -116,6 +116,29 @@ trait ManagesContacts
             'contactTags'
         );
     }
+    
+     /**
+     * Adds an automation to a contact.
+     *
+     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \TestMonitor\ActiveCampaign\Resources\Automation $automation
+     */
+    public function addAutomationToContact(Contact $contact, Automation $automation)
+    {
+        $contactAutomations = $this->contactAutomations($contact);
+
+        $contactAutomation = current(array_filter($contactAutomations, function ($contactAutomation) use ($automation) {
+            return $contactAutomation->automation == $automation->id;
+        }));
+
+        if (!empty($contactAutomation)) {
+            return;
+        }
+
+        $data = ['contactAutomation' => ['contact'=>$contact->id, 'automation'=>$automation->id]];
+        $this->post('contactAutomations', ['json' => $data]);
+    }
+
 
     /**
      * Removing a automation from a contact.

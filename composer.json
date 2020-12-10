@@ -1,7 +1,12 @@
 {
     "name": "testmonitor/activecampaign",
     "description": "ActiveCampaign API connector for APIv3",
-    "keywords": ["activecampaign", "active", "campaign", "api"],
+    "keywords": [
+        "activecampaign",
+        "active",
+        "campaign",
+        "api"
+    ],
     "authors": [
         {
             "name": "Thijs Kok",
@@ -27,7 +32,7 @@
     "require": {
         "php": ">=7.1.3",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^7.0.1"
     },
     "require-dev": {
         "codedungeon/phpunit-result-printer": "^0.23.0",

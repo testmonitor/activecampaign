@@ -32,7 +32,7 @@ jobs:
           name: Run Unit Tests
           command: |
             mkdir -p ./logs/phpunit
-            vendor/bin/phpunit -d memory_limit=512M --log-junit logs/phpunit/junit.xml --testdox-html logs/phpunit/testdox.html
+            XDEBUG_MODE=coverage vendor/bin/phpunit -d memory_limit=512M --log-junit logs/phpunit/junit.xml --testdox-html logs/phpunit/testdox.html
 
       - store_artifacts:
           path: ./logs/phpcs

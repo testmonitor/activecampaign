@@ -79,7 +79,7 @@ trait ManagesEvents
      */
     public function deleteEvent($name)
     {
-        $this->delete('eventTrackingEvents/'.$name);
+        $this->delete('eventTrackingEvents/' . $name);
     }
 
     /**
@@ -89,8 +89,8 @@ trait ManagesEvents
      * @param string $email     email address of the contact to track this event for, optional
      * @param array  $eventData a value to store for the event, optional
      *
-     * @return bool TRUE on success, FALSE otherwise
      * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
+     * @return bool TRUE on success, FALSE otherwise
      */
     public function trackEvent($name, $email = '', $eventData = [])
     {

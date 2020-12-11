@@ -3,9 +3,9 @@
 namespace TestMonitor\ActiveCampaign;
 
 use Psr\Http\Message\ResponseInterface;
-use TestMonitor\ActiveCampaign\Exceptions\FailedActionException;
 use TestMonitor\ActiveCampaign\Exceptions\NotFoundException;
 use TestMonitor\ActiveCampaign\Exceptions\ValidationException;
+use TestMonitor\ActiveCampaign\Exceptions\FailedActionException;
 
 /**
  * Class MakesHttpRequests.

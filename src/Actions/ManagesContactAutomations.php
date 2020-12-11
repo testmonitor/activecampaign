@@ -2,8 +2,8 @@
 
 namespace TestMonitor\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Automation;
 use TestMonitor\ActiveCampaign\Resources\Contact;
+use TestMonitor\ActiveCampaign\Resources\Automation;
 
 trait ManagesContactAutomations
 {

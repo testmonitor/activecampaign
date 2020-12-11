@@ -33,7 +33,7 @@ trait ManagesLists
     public function getList($id)
     {
         try {
-            $lists = $this->get('lists/'.$id);
+            $lists = $this->get('lists/' . $id);
 
             if (isset($lists['list']) && count($lists['list'])) {
                 return new ContactsList($lists['list']);
@@ -96,7 +96,7 @@ trait ManagesLists
      */
     public function deleteList($id)
     {
-        $this->delete('lists/'.$id);
+        $this->delete('lists/' . $id);
     }
 
     /**

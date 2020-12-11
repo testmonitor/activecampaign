@@ -3,18 +3,18 @@
 namespace TestMonitor\ActiveCampaign;
 
 use GuzzleHttp\Client as HttpClient;
-use TestMonitor\ActiveCampaign\Actions\ManagesAccountContacts;
-use TestMonitor\ActiveCampaign\Actions\ManagesAccountCustomFields;
+use TestMonitor\ActiveCampaign\Actions\ManagesTags;
+use TestMonitor\ActiveCampaign\Actions\ManagesLists;
+use TestMonitor\ActiveCampaign\Actions\ManagesEvents;
 use TestMonitor\ActiveCampaign\Actions\ManagesAccounts;
-use TestMonitor\ActiveCampaign\Actions\ManagesAutomations;
-use TestMonitor\ActiveCampaign\Actions\ManagesContactAutomations;
 use TestMonitor\ActiveCampaign\Actions\ManagesContacts;
+use TestMonitor\ActiveCampaign\Actions\ManagesAutomations;
 use TestMonitor\ActiveCampaign\Actions\ManagesContactTags;
 use TestMonitor\ActiveCampaign\Actions\ManagesCustomFields;
-use TestMonitor\ActiveCampaign\Actions\ManagesEvents;
-use TestMonitor\ActiveCampaign\Actions\ManagesLists;
 use TestMonitor\ActiveCampaign\Actions\ManagesOrganizations;
-use TestMonitor\ActiveCampaign\Actions\ManagesTags;
+use TestMonitor\ActiveCampaign\Actions\ManagesAccountContacts;
+use TestMonitor\ActiveCampaign\Actions\ManagesContactAutomations;
+use TestMonitor\ActiveCampaign\Actions\ManagesAccountCustomFields;
 
 class ActiveCampaign
 {

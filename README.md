@@ -1,7 +1,6 @@
 # ActiveCampaign PHP SDK
 
 [![Latest Stable Version](https://poser.pugx.org/testmonitor/activecampaign/v/stable)](https://packagist.org/packages/testmonitor/activecampaign)
-[![CircleCI](https://img.shields.io/circleci/project/github/testmonitor/activecampaign.svg)](https://circleci.com/gh/testmonitor/activecampaign)
 [![Travis Build](https://travis-ci.org/testmonitor/activecampaign.svg?branch=master)](https://travis-ci.org/testmonitor/activecampaign)
 [![Code Quality](https://scrutinizer-ci.com/g/testmonitor/activecampaign/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/testmonitor/activecampaign/?branch=master)
 [![StyleCI](https://styleci.io/repos/176945288/shield)](https://styleci.io/repos/176945288)
@@ -45,6 +44,15 @@ $activeCampaign = new ActiveCampaign(ACTIVE_CAMPAIGN_URL, ACTIVE_CAMPAIGN_KEY);
 
 Your API key can be found in your account on the Settings page under the "Developer" tab.
 
+## Upgrading
+
+ActiveCampaign has announced that [Organizations will be replaced by Accounts](https://help.activecampaign.com/hc/en-us/articles/360008108619-Transitioning-from-the-Organization-field-to-Accounts). 
+As of version **4.0**, this package will contain various changes to accommodate to this transition.
+
+For this reason, some breaking changes had to be introduced. When you upgrade from 3.0 to 4.0, make sure
+to check any references to organizations (for example, in the **createContact** method) and
+replace them.
+
 ## Usage
 
 Once instantiated, you can simply call one of the methods provided by the SDK:
@@ -59,9 +67,10 @@ To create a contact, you can use the `createContact` method:
 
 ```php
 $contact = $activeCampaign->createContact(
-    'email' => 'johndoe@example.com',
-    'firstName' => 'John',
-    'lastName' => 'Doe',
+    'johndoe@example.com',
+    'John',
+    'Doe',
+    '1-541-754-3010'
 );
 ```
 
@@ -71,9 +80,9 @@ To retrieve an existing contact or create it when it is missing:
 
 ```php
 $contact = $activeCampaign->findOrCreateContact(
-    'email' => 'johndoe@example.com',
-    'firstName' => 'John',
-    'lastName' => 'Doe',
+    'johndoe@example.com',
+    'John',
+    'Doe'
 );
 ```
 

@@ -50,7 +50,7 @@ trait ManagesContacts
      * @param string $email
      * @param string $firstName
      * @param string $lastName
-     * @param int|null $orgid
+     * @param int|null $phone
      *
      * @return Contact|null
      */

@@ -2,6 +2,7 @@
 
 namespace TestMonitor\ActiveCampaign\Resources;
 
+/** @deprecated use Account instead */
 class Organization extends Resource
 {
     /**

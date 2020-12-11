@@ -54,10 +54,10 @@ trait ManagesContacts
      *
      * @return Contact|null
      */
-    public function createContact($email, $firstName, $lastName, $orgid = null)
+    public function createContact($email, $firstName, $lastName, $phone = null)
     {
         $contacts = $this->transformCollection(
-            $this->post('contacts', ['json' => ['contact' => compact('email', 'firstName', 'lastName', 'orgid')]]),
+            $this->post('contacts', ['json' => ['contact' => compact('email', 'firstName', 'lastName', 'phone')]]),
             Contact::class
         );
 
@@ -70,11 +70,11 @@ trait ManagesContacts
      * @param string $email
      * @param string $firstName
      * @param string $lastName
-     * @param int|null $orgid
+     * @param string $phone
      *
      * @return Contact
      */
-    public function findOrCreateContact($email, $firstName, $lastName, $orgid = null)
+    public function findOrCreateContact($email, $firstName, $lastName, $phone)
     {
         $contact = $this->findContact($email);
 
@@ -82,7 +82,25 @@ trait ManagesContacts
             return $contact;
         }
 
-        return $this->createContact($email, $firstName, $lastName, $orgid);
+        return $this->createContact($email, $firstName, $lastName, $phone);
+    }
+
+    /**
+     * Update or create an account.
+     *
+     * @param string $name
+     * @param array $data
+     *
+     * @return Contact
+     */
+    public function updateOrCreateContact($email, $firstName, $lastName, $phone)
+    {
+        $contacts = $this->transformCollection(
+            $this->post('contact/sync', ['json' => ['contact' => compact('email', 'firstName', 'lastName', 'phone')]]),
+            Contact::class
+        );
+
+        return array_shift($contacts);
     }
 
     /**

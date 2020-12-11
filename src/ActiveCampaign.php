@@ -3,6 +3,7 @@
 namespace TestMonitor\ActiveCampaign;
 
 use GuzzleHttp\Client as HttpClient;
+use TestMonitor\ActiveCampaign\Actions\ManagesAccounts;
 use TestMonitor\ActiveCampaign\Actions\ManagesAutomations;
 use TestMonitor\ActiveCampaign\Actions\ManagesContactAutomations;
 use TestMonitor\ActiveCampaign\Actions\ManagesContacts;
@@ -16,6 +17,7 @@ use TestMonitor\ActiveCampaign\Actions\ManagesTags;
 class ActiveCampaign
 {
     use MakesHttpRequests,
+        ManagesAccounts,
         ManagesAutomations,
         ManagesContacts,
         ManagesTags,

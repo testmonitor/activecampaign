@@ -32,17 +32,17 @@ class AccountCustomField extends Resource
     public $fieldOptions;
 
     /**
-     * @var boolean
+     * @var bool
      */
     public $isFormVisible;
 
     /**
-     * @var boolean
+     * @var bool
      */
     public $isRequired;
 
     /**
-     * @var boolean
+     * @var bool
      */
     public $displayOrder;
 }

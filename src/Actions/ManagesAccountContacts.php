@@ -9,7 +9,7 @@ trait ManagesAccountContacts
     use ImplementsActions;
 
     /**
-     * Retrieve all existing account association
+     * Retrieve all existing account association.
      *
      * @return array
      */
@@ -23,7 +23,7 @@ trait ManagesAccountContacts
     }
 
     /**
-     * Retrieve an existing account association given the contactID and accountID
+     * Retrieve an existing account association given the contactID and accountID.
      *
      * @param int $contactId
      * @param int $accountId
@@ -33,7 +33,7 @@ trait ManagesAccountContacts
     public function findAccountContact($contactId, $accountId)
     {
         $accounts = $this->transformCollection(
-            $this->get("accountContacts", [
+            $this->get('accountContacts', [
                 'query' => [
                     'filters[contact]' => $contactId,
                     'filters[account]' => $accountId,
@@ -47,7 +47,7 @@ trait ManagesAccountContacts
     }
 
     /**
-     * Retrieve an existing account association
+     * Retrieve an existing account association.
      *
      * @param int $id
      *
@@ -64,7 +64,7 @@ trait ManagesAccountContacts
     }
 
     /**
-     * Create a new account association
+     * Create a new account association.
      *
      * @param int $contact contact ID
      * @param int $account account ID
@@ -85,7 +85,7 @@ trait ManagesAccountContacts
     }
 
     /**
-     * Update an existing account association
+     * Update an existing account association.
      *
      * @param int $associationId
      * @param string $jobTitle
@@ -145,7 +145,7 @@ trait ManagesAccountContacts
     }
 
     /**
-     * Delete an existing account association
+     * Delete an existing account association.
      *
      * @param int $associationId
      *

@@ -22,7 +22,7 @@ class Account extends Resource
     public $accountUrl;
 
     /**
-     * List of custom fields
+     * List of custom fields.
      *
      * @var array
      */

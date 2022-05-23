@@ -1,5 +1,5 @@
 {
-    "name": "testmonitor/activecampaign",
+    "name": "perfectworkout/activecampaign",
     "description": "ActiveCampaign API connector for APIv3",
     "keywords": [
         "activecampaign",
@@ -8,6 +8,10 @@
         "api"
     ],
     "authors": [
+        {
+            "name": "Jordan Novak",
+            "email": "jordan.novak@theperfectworkout.com"
+        },
         {
             "name": "Thijs Kok",
             "email": "tkok@testmonitor.com",

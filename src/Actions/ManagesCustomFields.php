@@ -66,4 +66,35 @@ trait ManagesCustomFields
 
         return array_shift($contacts);
     }
+
+    public function createCustomField(string $title, string $type, ?string $description = null, int $required = 0, ?string $personalizationTag = null, ?string $defaultValue = null, int $visible = 1, ?int $orderNum = null, int $addToList = 1)
+    {
+        $data = [
+            'type' => $type,
+            'title' => $title,
+            'descript' => $description,
+            'perstag' => $personalizationTag,
+            'defval' => $defaultValue,
+            'visible' => $visible,
+            'ordernum' => $orderNum,
+        ];
+        $fieldResult = $this->post('fields', ['json' => ['field' => $data]]);
+        return $fieldResult;
+    }
+
+    public function addCustomFieldToList(int $fieldId, int $listId)
+    {
+        $data = [
+            'field' => $fieldId,
+            'relid' => $listId,
+        ];
+        $result = $this->post('fieldRels', ['json' => ['fieldRel' => $data]]);
+        return $result;
+    }
+
+    public function listCustomFields()
+    {
+        $result = $this->get('fields?limit=264');
+        return $result;
+    }
 }

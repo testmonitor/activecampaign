@@ -1,6 +1,6 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
 /**
  * Class Action.

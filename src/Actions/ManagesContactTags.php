@@ -1,9 +1,9 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Tag;
-use TestMonitor\ActiveCampaign\Resources\Contact;
+use PerfectWorkout\ActiveCampaign\Resources\Tag;
+use PerfectWorkout\ActiveCampaign\Resources\Contact;
 
 trait ManagesContactTags
 {
@@ -12,8 +12,8 @@ trait ManagesContactTags
     /**
      * Add tag to contact.
      *
-     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
-     * @param \TestMonitor\ActiveCampaign\Resources\Tag $tag
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Contact $contact
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Tag $tag
      *
      * @return array
      */
@@ -31,7 +31,7 @@ trait ManagesContactTags
     }
 
     /**
-     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Contact $contact
      * @param array $tags
      */
     public function addTagsToContact(Contact $contact, array $tags)

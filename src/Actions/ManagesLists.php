@@ -1,9 +1,9 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Contact;
-use TestMonitor\ActiveCampaign\Resources\ContactsList;
+use PerfectWorkout\ActiveCampaign\Resources\Contact;
+use PerfectWorkout\ActiveCampaign\Resources\ContactsList;
 
 trait ManagesLists
 {
@@ -38,7 +38,7 @@ trait ManagesLists
             if (isset($lists['list']) && count($lists['list'])) {
                 return new ContactsList($lists['list']);
             }
-        } catch (\TestMonitor\ActiveCampaign\Exceptions\NotFoundException $e) {
+        } catch (\PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException $e) {
             // return null if list not foun
         }
     }
@@ -92,7 +92,7 @@ trait ManagesLists
      *
      * @param int $id ID of the list to delete
      *
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
      */
     public function deleteList($id)
     {

@@ -1,9 +1,9 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Contact;
-use TestMonitor\ActiveCampaign\Resources\Automation;
+use PerfectWorkout\ActiveCampaign\Resources\Contact;
+use PerfectWorkout\ActiveCampaign\Resources\Automation;
 
 trait ManagesContactAutomations
 {
@@ -12,8 +12,8 @@ trait ManagesContactAutomations
     /**
      * Get all organizations.
      *
-     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
-     * @param \TestMonitor\ActiveCampaign\Resources\Automation $automation
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Contact $contact
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Automation $automation
      *
      * @return array
      */

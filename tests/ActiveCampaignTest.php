@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use TestMonitor\ActiveCampaign\ActiveCampaign;
+use PerfectWorkout\ActiveCampaign\ActiveCampaign;
 
 class ActiveCampaignTest extends TestCase
 {
@@ -23,7 +23,7 @@ class ActiveCampaignTest extends TestCase
 
         $organizations = $activeCampaign->organizations();
 
-        $this->assertContainsOnlyInstancesOf(\TestMonitor\ActiveCampaign\Resources\Organization::class, $organizations);
+        $this->assertContainsOnlyInstancesOf(\PerfectWorkout\ActiveCampaign\Resources\Organization::class, $organizations);
     }
 
     public function test_handling_validation_errors()
@@ -39,7 +39,7 @@ class ActiveCampaignTest extends TestCase
 
         try {
             $activeCampaign->organizations();
-        } catch (\TestMonitor\ActiveCampaign\Exceptions\ValidationException $e) {
+        } catch (\PerfectWorkout\ActiveCampaign\Exceptions\ValidationException $e) {
         }
 
         $this->assertEquals(['name' => ['The name is required.']], $e->errors());
@@ -47,7 +47,7 @@ class ActiveCampaignTest extends TestCase
 
     public function test_handling_404_errors()
     {
-        $this->expectException(\TestMonitor\ActiveCampaign\Exceptions\NotFoundException::class);
+        $this->expectException(\PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException::class);
 
         $activeCampaign = new ActiveCampaign('', '123', $http = Mockery::mock('GuzzleHttp\Client'));
 
@@ -73,7 +73,7 @@ class ActiveCampaignTest extends TestCase
 
         try {
             $activeCampaign->organizations();
-        } catch (\TestMonitor\ActiveCampaign\Exceptions\FailedActionException $e) {
+        } catch (\PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException $e) {
         }
 
         $this->assertEquals('Error!', $e->getMessage());

@@ -1,12 +1,12 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Tag;
-use TestMonitor\ActiveCampaign\Resources\Contact;
-use TestMonitor\ActiveCampaign\Resources\Automation;
-use TestMonitor\ActiveCampaign\Resources\ContactTag;
-use TestMonitor\ActiveCampaign\Resources\ContactAutomation;
+use PerfectWorkout\ActiveCampaign\Resources\Tag;
+use PerfectWorkout\ActiveCampaign\Resources\Contact;
+use PerfectWorkout\ActiveCampaign\Resources\Automation;
+use PerfectWorkout\ActiveCampaign\Resources\ContactTag;
+use PerfectWorkout\ActiveCampaign\Resources\ContactAutomation;
 
 trait ManagesContacts
 {
@@ -136,7 +136,7 @@ trait ManagesContacts
     /**
      * Get all automations of a contact.
      *
-     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Contact $contact
      *
      * @return array
      */
@@ -152,7 +152,7 @@ trait ManagesContacts
     /**
      * Get all tags of a contact.
      *
-     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Contact $contact
      *
      * @return array
      */
@@ -168,8 +168,8 @@ trait ManagesContacts
     /**
      * Removing a automation from a contact.
      *
-     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
-     * @param \TestMonitor\ActiveCampaign\Resources\Automation $automation
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Contact $contact
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Automation $automation
      */
     public function removeAutomationFromContact(Contact $contact, Automation $automation)
     {
@@ -189,7 +189,7 @@ trait ManagesContacts
     /**
      * Removing all automations from a contact.
      *
-     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Contact $contact
      */
     public function removeAllAutomationsFromContact(Contact $contact)
     {
@@ -203,8 +203,8 @@ trait ManagesContacts
     /**
      * Removing a tag from a contact.
      *
-     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
-     * @param \TestMonitor\ActiveCampaign\Resources\Tag $tag
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Contact $contact
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Tag $tag
      */
     public function removeTagFromContact(Contact $contact, Tag $tag)
     {

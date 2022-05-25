@@ -1,8 +1,8 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Event;
+use PerfectWorkout\ActiveCampaign\Resources\Event;
 
 trait ManagesEvents
 {
@@ -75,7 +75,7 @@ trait ManagesEvents
      *
      * @param $name
      *
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
      */
     public function deleteEvent($name)
     {
@@ -89,7 +89,7 @@ trait ManagesEvents
      * @param string $email     email address of the contact to track this event for, optional
      * @param array  $eventData a value to store for the event, optional
      *
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
      * @return bool TRUE on success, FALSE otherwise
      */
     public function trackEvent($name, $email = '', $eventData = [])
@@ -116,7 +116,7 @@ trait ManagesEvents
 
             return false;
         } else {
-            throw new \TestMonitor\ActiveCampaign\Exceptions\FailedActionException(curl_error($curl));
+            throw new \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException(curl_error($curl));
         }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Exceptions;
+namespace PerfectWorkout\ActiveCampaign\Exceptions;
 
 use Exception;
 

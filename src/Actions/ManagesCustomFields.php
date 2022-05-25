@@ -1,9 +1,9 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Contact;
-use TestMonitor\ActiveCampaign\Resources\CustomField;
+use PerfectWorkout\ActiveCampaign\Resources\Contact;
+use PerfectWorkout\ActiveCampaign\Resources\CustomField;
 
 trait ManagesCustomFields
 {
@@ -44,8 +44,8 @@ trait ManagesCustomFields
     /**
      * Add custom field value to contact.
      *
-     * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
-     * @param \TestMonitor\ActiveCampaign\Resources\CustomField $customField
+     * @param \PerfectWorkout\ActiveCampaign\Resources\Contact $contact
+     * @param \PerfectWorkout\ActiveCampaign\Resources\CustomField $customField
      * @param $value
      *
      * @return Contact

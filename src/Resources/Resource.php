@@ -1,6 +1,6 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Resources;
+namespace PerfectWorkout\ActiveCampaign\Resources;
 
 class Resource
 {
@@ -14,7 +14,7 @@ class Resource
     /**
      * The ActiveCampaign SDK instance.
      *
-     * @var \TestMonitor\ActiveCampaign\ActiveCampaign
+     * @var \PerfectWorkout\ActiveCampaign\ActiveCampaign
      */
     protected $activeCampaign;
 
@@ -22,7 +22,7 @@ class Resource
      * Create a new resource instance.
      *
      * @param  array $attributes
-     * @param  \TestMonitor\ActiveCampaign\ActiveCampaign $activeCampaign
+     * @param  \PerfectWorkout\ActiveCampaign\ActiveCampaign $activeCampaign
      * @return void
      */
     public function __construct(array $attributes, $activeCampaign = null)

@@ -1,8 +1,8 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\AccountContact;
+use PerfectWorkout\ActiveCampaign\Resources\AccountContact;
 
 trait ManagesAccountContacts
 {

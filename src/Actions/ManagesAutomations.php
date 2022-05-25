@@ -1,8 +1,8 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Automation;
+use PerfectWorkout\ActiveCampaign\Resources\Automation;
 
 trait ManagesAutomations
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Actions;
+namespace PerfectWorkout\ActiveCampaign\Actions;
 
-use TestMonitor\ActiveCampaign\Resources\Organization;
+use PerfectWorkout\ActiveCampaign\Resources\Organization;
 
 /** @deprecated use ManageAccounts instead */
 trait ManagesOrganizations

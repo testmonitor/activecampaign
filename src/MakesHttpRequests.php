@@ -1,11 +1,11 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign;
+namespace PerfectWorkout\ActiveCampaign;
 
 use Psr\Http\Message\ResponseInterface;
-use TestMonitor\ActiveCampaign\Exceptions\NotFoundException;
-use TestMonitor\ActiveCampaign\Exceptions\ValidationException;
-use TestMonitor\ActiveCampaign\Exceptions\FailedActionException;
+use PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException;
+use PerfectWorkout\ActiveCampaign\Exceptions\ValidationException;
+use PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException;
 
 /**
  * Class MakesHttpRequests.
@@ -20,9 +20,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param array $payload
      *
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -37,9 +37,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -54,9 +54,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -71,9 +71,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -89,9 +89,9 @@ trait MakesHttpRequests
      * @param  string $uri
      * @param  array $payload
      *
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
      *
      * @return mixed
      */
@@ -115,9 +115,9 @@ trait MakesHttpRequests
     /**
      * @param  \Psr\Http\Message\ResponseInterface $response
      *
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
      * @throws \Exception
      *
      * @return void

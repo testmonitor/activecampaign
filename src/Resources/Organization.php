@@ -1,6 +1,6 @@
 <?php
 
-namespace TestMonitor\ActiveCampaign\Resources;
+namespace PerfectWorkout\ActiveCampaign\Resources;
 
 /** @deprecated use Account instead */
 class Organization extends Resource

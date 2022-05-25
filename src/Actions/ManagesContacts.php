@@ -74,7 +74,7 @@ trait ManagesContacts
         return array_shift($contacts);
     }
 
-    public function updateContact(int $id, string $email, string $firstName, string $lastName, ?string $phpone, array $fieldValues = [])
+    public function updateContact(int $id, string $email, string $firstName, string $lastName, ?string $phone, array $fieldValues = [])
     {
         $contacts = $this->transformCollection(
             $this->put('contacts/' . $id, [

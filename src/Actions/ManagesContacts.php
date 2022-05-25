@@ -54,10 +54,40 @@ trait ManagesContacts
      *
      * @return Contact|null
      */
-    public function createContact($email, $firstName, $lastName, $phone = null)
+    public function createContact(string $email, string $firstName, string $lastName, ?string $phone = null, array $fieldValues = [])
     {
         $contacts = $this->transformCollection(
-            $this->post('contacts', ['json' => ['contact' => compact('email', 'firstName', 'lastName', 'phone')]]),
+            $this->post('contacts', [
+                'json' => [
+                    'contact' => [
+                        'email' => $email,
+                        'firstName' => $firstName,
+                        'lastName' => $lastName,
+                        'phone' => $phone,
+                        'fieldValues' => $fieldValues
+                    ]
+                ]
+            ]),
+            Contact::class
+        );
+
+        return array_shift($contacts);
+    }
+
+    public function updateContact(int $id, string $email, string $firstName, string $lastName, ?string $phpone, array $fieldValues = [])
+    {
+        $contacts = $this->transformCollection(
+            $this->put('contacts/' . $id, [
+                'json' => [
+                    'contact' => [
+                        'email' => $email,
+                        'firstName' => $firstName,
+                        'lastName' => $lastName,
+                        'phone' => $phone,
+                        'fieldValues' => $fieldValues
+                    ]
+                ]
+            ]),
             Contact::class
         );
 

@@ -56,7 +56,7 @@ trait ManagesContacts
      */
     public function createContact(string $email, string $firstName, string $lastName, ?string $phone = null, array $fieldValues = [])
     {
-        $contacts = $this->transformCollection(
+        $result = $this->transformCollection(
             $this->post('contacts', [
                 'json' => [
                     'contact' => [
@@ -71,7 +71,7 @@ trait ManagesContacts
             Contact::class
         );
 
-        return array_shift($contacts);
+        return $result['contact'];
     }
 
     public function updateContact(int $id, string $email, string $firstName, string $lastName, ?string $phone, array $fieldValues = [])

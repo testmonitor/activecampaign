@@ -44,6 +44,16 @@ trait ManagesContacts
         return array_shift($contacts);
     }
 
+    public function getContact($id)
+    {
+        $contacts = $this->transformCollection(
+            $this->get("contacts/$id"),
+            Contact::class,
+            'contacts'
+        );
+        return array_shift($contacts);
+    }
+
     /**
      * Create new contact.
      *

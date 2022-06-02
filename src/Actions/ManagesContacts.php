@@ -46,12 +46,13 @@ trait ManagesContacts
 
     public function getContact($id)
     {
-        $contacts = $this->transformCollection(
+        $contact = $this->transformCollection(
             $this->get("contacts/$id"),
             Contact::class,
             'contacts'
         );
-        return array_shift($contacts);
+
+        return $contact;
     }
 
     /**

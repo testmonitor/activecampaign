@@ -133,15 +133,15 @@ trait ManagesAccountContacts
      *
      * @return AccountContact
      */
-    public function updateOrCreateAccountContact($contact, $account, $jobTitle)
+    public function updateOrCreateAccountContact($contactId, $accountId, $jobTitle)
     {
-        $association = $this->findAccountContact($contact, $account);
+        $association = $this->findAccountContact($contactId, $accountId);
 
         if ($association instanceof AccountContact) {
             return $this->updateAccountContact($association->id, $jobTitle);
         }
 
-        return $this->createAccountContact($contact, $account, $jobTitle);
+        return $this->createAccountContact($contactId, $accountId, $jobTitle);
     }
 
     /**

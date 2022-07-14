@@ -105,7 +105,7 @@ trait MakesHttpRequests
         );
 
         if (! in_array($response->getStatusCode(), [200, 201])) {
-            return $this->handleRequestError($response);
+            $this->handleRequestError($response);
         }
 
         $responseBody = (string) $response->getBody();
@@ -114,12 +114,11 @@ trait MakesHttpRequests
     }
 
     /**
-     * @param  Psr\Http\Message\ResponseInterface $response
+     * @param  ResponseInterface $response
      *
-     * @throws PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
-     * @throws PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
-     * @throws PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
-     * @throws Exception
+     * @throws ValidationException
+     * @throws NotFoundException
+     * @throws FailedActionException
      * @throws Exception
      *
      * @return void

@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException;
 use PerfectWorkout\ActiveCampaign\Exceptions\ValidationException;
 use PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException;
+use Exception;
 
 /**
  * Class MakesHttpRequests.
@@ -113,29 +114,23 @@ trait MakesHttpRequests
     }
 
     /**
-     * @param  \Psr\Http\Message\ResponseInterface $response
+     * @param  Psr\Http\Message\ResponseInterface $response
      *
-     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
-     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
-     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
-     * @throws \Exception
+     * @throws PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
+     * @throws PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
+     * @throws PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
+     * @throws Exception
+     * @throws Exception
      *
      * @return void
      */
-    private function handleRequestError(ResponseInterface $response)
+    private function handleRequestError(ResponseInterface $response): void
     {
-        if ($response->getStatusCode() == 422) {
-            throw new ValidationException(json_decode((string) $response->getBody(), true));
-        }
-
-        if ($response->getStatusCode() == 404) {
-            throw new NotFoundException();
-        }
-
-        if ($response->getStatusCode() == 400) {
-            throw new FailedActionException((string) $response->getBody());
-        }
-
-        throw new \Exception((string) $response->getBody());
+        match ($response->getStatusCode()) {
+            422 => throw new ValidationException(json_decode((string) $response->getBody(), true)),
+            404 => throw new NotFoundException(),
+            400 => throw new FailedActionException((string) $response->getBody()),
+            default => throw new Exception((string) $response->getBody(), $response->getStatusCode()),
+        };
     }
 }

@@ -136,6 +136,7 @@ trait MakesHttpRequests
             throw new FailedActionException((string) $response->getBody());
         }
 
-        throw new \Exception((string) $response->getBody());
+        //adding the status code allows us to custom handle RateLimit errors
+        throw new \Exception((string) $response->getBody(), $response->getStatusCode());
     }
 }

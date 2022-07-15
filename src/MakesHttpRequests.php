@@ -6,7 +6,6 @@ use Psr\Http\Message\ResponseInterface;
 use PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException;
 use PerfectWorkout\ActiveCampaign\Exceptions\ValidationException;
 use PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException;
-use Exception;
 
 /**
  * Class MakesHttpRequests.
@@ -105,7 +104,7 @@ trait MakesHttpRequests
         );
 
         if (! in_array($response->getStatusCode(), [200, 201])) {
-            $this->handleRequestError($response);
+            return $this->handleRequestError($response);
         }
 
         $responseBody = (string) $response->getBody();
@@ -114,22 +113,29 @@ trait MakesHttpRequests
     }
 
     /**
-     * @param  ResponseInterface $response
+     * @param  \Psr\Http\Message\ResponseInterface $response
      *
-     * @throws ValidationException
-     * @throws NotFoundException
-     * @throws FailedActionException
-     * @throws Exception
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \Exception
      *
      * @return void
      */
-    private function handleRequestError(ResponseInterface $response): void
+    private function handleRequestError(ResponseInterface $response)
     {
-        match ($response->getStatusCode()) {
-            422 => throw new ValidationException(json_decode((string) $response->getBody(), true)),
-            404 => throw new NotFoundException(),
-            400 => throw new FailedActionException((string) $response->getBody()),
-            default => throw new Exception((string) $response->getBody(), $response->getStatusCode()),
-        };
+        if ($response->getStatusCode() == 422) {
+            throw new ValidationException(json_decode((string) $response->getBody(), true));
+        }
+
+        if ($response->getStatusCode() == 404) {
+            throw new NotFoundException();
+        }
+
+        if ($response->getStatusCode() == 400) {
+            throw new FailedActionException((string) $response->getBody());
+        }
+
+        throw new \Exception((string) $response->getBody(), $response->getStatusCode());
     }
 }

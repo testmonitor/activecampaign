@@ -35,7 +35,7 @@
         "guzzlehttp/guzzle": "^7.0.1"
     },
     "require-dev": {
-        "phploc/phploc": "^4.0",
+        "phploc/phploc": "^7.0",
         "phpmd/phpmd": "^2.6",
         "friendsofphp/php-cs-fixer": "3.2.0",
         "mockery/mockery": "~1.4",

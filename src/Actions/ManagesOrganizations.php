@@ -13,6 +13,7 @@ trait ManagesOrganizations
      * Get all organizations.
      *
      * @deprecated use accounts() instead
+     *
      * @return array
      */
     public function organizations()
@@ -30,6 +31,7 @@ trait ManagesOrganizations
      * @param string $name
      *
      * @deprecated use findAccount() instead
+     *
      * @return Organization|null
      */
     public function findOrganization($name)
@@ -49,6 +51,7 @@ trait ManagesOrganizations
      * @param array $data
      *
      * @deprecated use createAccount() instead
+     *
      * @return Organization|null
      */
     public function createOrganization(array $data = [])
@@ -67,6 +70,7 @@ trait ManagesOrganizations
      * @param $name
      *
      * @deprecated use findOrCreateAccount() instead
+     *
      * @return Organization
      */
     public function findOrCreateOrganization($name)

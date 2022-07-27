@@ -14,7 +14,6 @@ trait ManagesContactAutomations
      *
      * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
      * @param \TestMonitor\ActiveCampaign\Resources\Automation $automation
-     *
      * @return array
      */
     public function addContactToAutomation(Contact $contact, Automation $automation)

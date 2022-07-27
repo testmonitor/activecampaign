@@ -26,7 +26,6 @@ trait ManagesAccountCustomFields
      * Find custom field by name.
      *
      * @param string $name
-     *
      * @return AccountCustomField|null
      */
     public function findCustomAccountField($name)

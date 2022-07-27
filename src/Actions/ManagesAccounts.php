@@ -26,7 +26,6 @@ trait ManagesAccounts
      * Find account by name.
      *
      * @param string $name
-     *
      * @return Account|null
      */
     public function findAccount($name)
@@ -44,7 +43,6 @@ trait ManagesAccounts
      * Create new account.
      *
      * @param array $data
-     *
      * @return Account|null
      */
     public function createAccount(array $data = [])
@@ -62,7 +60,6 @@ trait ManagesAccounts
      *
      * @param int $accountId
      * @param array $data
-     *
      * @return Account|null
      */
     public function updateAccount($accountId, array $data = [])
@@ -80,7 +77,6 @@ trait ManagesAccounts
      *
      * @param string $name
      * @param array $data
-     *
      * @return Account
      */
     public function findOrCreateAccount($name, array $data = [])
@@ -103,7 +99,6 @@ trait ManagesAccounts
      *
      * @param string $name
      * @param array $data
-     *
      * @return Account
      */
     public function updateOrCreateAccount($name, array $data = [])

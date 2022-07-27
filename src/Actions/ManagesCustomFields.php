@@ -27,7 +27,6 @@ trait ManagesCustomFields
      * Find custom field by name.
      *
      * @param string $name
-     *
      * @return CustomField|null
      */
     public function findCustomField($name)
@@ -47,7 +46,6 @@ trait ManagesCustomFields
      * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
      * @param \TestMonitor\ActiveCampaign\Resources\CustomField $customField
      * @param $value
-     *
      * @return Contact
      */
     public function addCustomFieldToContact(Contact $contact, CustomField $customField, $value)

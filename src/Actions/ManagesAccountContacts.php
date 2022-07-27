@@ -10,6 +10,7 @@ trait ManagesAccountContacts
 
     /**
      * Retrieve all existing account association.
+     *
      * @return array
      */
     public function accountContacts()

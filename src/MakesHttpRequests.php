@@ -142,7 +142,7 @@ trait MakesHttpRequests
             throw new RateLimitException((string) $response->getBody());
         }
 
-        //adding the status code allows us to custom handle RateLimit errors
+        //adding the status code so its returned in non custom exceptions
         throw new \Exception((string) $response->getBody(), $response->getStatusCode());
     }
 }

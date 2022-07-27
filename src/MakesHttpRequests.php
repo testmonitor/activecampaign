@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException;
 use PerfectWorkout\ActiveCampaign\Exceptions\ValidationException;
 use PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException;
+use PerfectWorkout\ActiveCampaign\Exceptions\RateLimitException;
 
 /**
  * Class MakesHttpRequests.
@@ -118,6 +119,7 @@ trait MakesHttpRequests
      * @throws \PerfectWorkout\ActiveCampaign\Exceptions\ValidationException
      * @throws \PerfectWorkout\ActiveCampaign\Exceptions\NotFoundException
      * @throws \PerfectWorkout\ActiveCampaign\Exceptions\FailedActionException
+     * @throws \PerfectWorkout\ActiveCampaign\Exceptions\RateLimitException
      * @throws \Exception
      *
      * @return void
@@ -134,6 +136,10 @@ trait MakesHttpRequests
 
         if ($response->getStatusCode() == 400) {
             throw new FailedActionException((string) $response->getBody());
+        }
+
+        if ($response->getStatusCode() == 429) {
+            throw new RateLimitException((string) $response->getBody());
         }
 
         //adding the status code allows us to custom handle RateLimit errors

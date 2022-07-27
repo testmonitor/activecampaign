@@ -1,7 +1,0 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="PHP CS Fixer" tests="1" assertions="1" failures="0" errors="0" time="0.153">
-    <testcase name="All OK" assertions="1"/>
-  </testsuite>
-</testsuites>

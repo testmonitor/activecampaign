@@ -30,7 +30,6 @@ trait ManagesContacts
      * Find contact by email.
      *
      * @param string $email
-     *
      * @return Contact|null
      */
     public function findContact($email)
@@ -51,7 +50,6 @@ trait ManagesContacts
      * @param string $firstName
      * @param string $lastName
      * @param int|null $phone
-     *
      * @return Contact|null
      */
     public function createContact($email, $firstName, $lastName, $phone = null)
@@ -71,7 +69,6 @@ trait ManagesContacts
      * @param string $firstName
      * @param string $lastName
      * @param string $phone
-     *
      * @return Contact
      */
     public function findOrCreateContact($email, $firstName, $lastName, $phone)
@@ -90,7 +87,6 @@ trait ManagesContacts
      *
      * @param string $name
      * @param array $data
-     *
      * @return Contact
      */
     public function updateOrCreateContact($email, $firstName, $lastName, $phone)
@@ -107,7 +103,6 @@ trait ManagesContacts
      * Get all automations of a contact.
      *
      * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
-     *
      * @return array
      */
     public function contactAutomations(Contact $contact)
@@ -123,7 +118,6 @@ trait ManagesContacts
      * Get all tags of a contact.
      *
      * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
-     *
      * @return array
      */
     public function contactTags(Contact $contact)

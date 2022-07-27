@@ -83,7 +83,6 @@ class ActiveCampaign
      * @param  string $class
      * @param  string $key
      * @param  array $extraData
-     *
      * @return array
      */
     protected function transformCollection($collection, $class, $key = '', $extraData = [])

@@ -10,7 +10,6 @@ trait ManagesAccountContacts
 
     /**
      * Retrieve all existing account association.
-     *
      * @return array
      */
     public function accountContacts()
@@ -27,7 +26,6 @@ trait ManagesAccountContacts
      *
      * @param int $contactId
      * @param int $accountId
-     *
      * @return AccountContact|null
      */
     public function findAccountContact($contactId, $accountId)
@@ -50,7 +48,6 @@ trait ManagesAccountContacts
      * Retrieve an existing account association.
      *
      * @param int $id
-     *
      * @return AccountContact|null
      */
     public function getAccountContact($id)
@@ -69,7 +66,6 @@ trait ManagesAccountContacts
      * @param int $contact contact ID
      * @param int $account account ID
      * @param string $jobTitle
-     *
      * @return AccountContact|null
      */
     public function createAccountContact($contact, $account, $jobTitle)
@@ -89,7 +85,6 @@ trait ManagesAccountContacts
      *
      * @param int $associationId
      * @param string $jobTitle
-     *
      * @return AccountContact|null
      */
     public function updateAccountContact($associationId, $jobTitle)
@@ -110,7 +105,6 @@ trait ManagesAccountContacts
      * @param int $contact contact ID
      * @param int $account account ID
      * @param string $jobTitle
-     *
      * @return AccountContact
      */
     public function findOrCreateAccountContact($contact, $account, $jobTitle)
@@ -130,7 +124,6 @@ trait ManagesAccountContacts
      * @param int $contact contact ID
      * @param int $account account ID
      * @param string $jobTitle
-     *
      * @return AccountContact
      */
     public function updateOrCreateAccountContact($contact, $account, $jobTitle)
@@ -148,7 +141,6 @@ trait ManagesAccountContacts
      * Delete an existing account association.
      *
      * @param int $associationId
-     *
      * @return void
      */
     public function deleteAccountContact($associationId)

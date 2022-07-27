@@ -23,7 +23,6 @@ trait MakesHttpRequests
      * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
-     *
      * @return mixed
      */
     private function get($uri, $payload = [])
@@ -40,7 +39,6 @@ trait MakesHttpRequests
      * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
-     *
      * @return mixed
      */
     private function post($uri, array $payload = [])
@@ -57,7 +55,6 @@ trait MakesHttpRequests
      * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
-     *
      * @return mixed
      */
     private function put($uri, array $payload = [])
@@ -74,7 +71,6 @@ trait MakesHttpRequests
      * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
-     *
      * @return mixed
      */
     private function delete($uri, array $payload = [])
@@ -92,7 +88,6 @@ trait MakesHttpRequests
      * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\ValidationException
-     *
      * @return mixed
      */
     private function request($verb, $uri, array $payload = [])
@@ -119,7 +114,6 @@ trait MakesHttpRequests
      * @throws \TestMonitor\ActiveCampaign\Exceptions\NotFoundException
      * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
      * @throws \Exception
-     *
      * @return void
      */
     private function handleRequestError(ResponseInterface $response)

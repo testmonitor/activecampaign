@@ -28,7 +28,6 @@ trait ManagesEvents
      * Creates a new event (name only).
      *
      * @param string $name
-     *
      * @return Event
      */
     public function createEvent($name)
@@ -90,6 +89,7 @@ trait ManagesEvents
      * @param array  $eventData a value to store for the event, optional
      *
      * @throws \TestMonitor\ActiveCampaign\Exceptions\FailedActionException
+     *
      * @return bool TRUE on success, FALSE otherwise
      */
     public function trackEvent($name, $email = '', $eventData = [])

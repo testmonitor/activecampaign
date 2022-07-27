@@ -26,7 +26,6 @@ trait ManagesTags
      * Find tag by name.
      *
      * @param string $name
-     *
      * @return array
      */
     public function findTag($name)
@@ -44,7 +43,6 @@ trait ManagesTags
      * Create new tag.
      *
      * @param array $data
-     *
      * @return Tag
      */
     public function createTag(array $data = [])
@@ -61,7 +59,6 @@ trait ManagesTags
      * Find or create a tag.
      *
      * @param string $name
-     *
      * @return Tag
      */
     public function findOrCreateTag($name)

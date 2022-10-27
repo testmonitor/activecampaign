@@ -54,6 +54,19 @@ trait ManagesContacts
 
         return $contact;
     }
+    
+     /**
+     *
+     * Delete contact by ActiveCampaign Id
+     *
+     * @param int $id
+     *
+     * @return void
+     */
+    public function deleteContact(int $id): void
+    {
+        $this->delete("contacts/$id");
+    }
 
     /**
      * Create new contact.

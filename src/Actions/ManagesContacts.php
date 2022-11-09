@@ -98,11 +98,10 @@ trait ManagesContacts
         return $result['contact'];
     }
 
-
     public function addContactToList(int $contactId, int $listId, int $listStatus = 1)
     {
         return $this->transformCollection(
-            $this->put('contactLists/' . $id, [
+            $this->put('contactLists/', [
                 'json' => [
                     'contactList' => [
                         'list' => $listId,

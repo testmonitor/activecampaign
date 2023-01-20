@@ -1,4 +1,3 @@
-
 <?php
 
 $finder = (new PhpCsFixer\Finder())

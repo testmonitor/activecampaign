@@ -3,6 +3,7 @@ preset: laravel
 enabled:
     - length_ordered_imports
     - concat_with_spaces
+    - blank_line_before_return
 
 disabled:
     - alpha_ordered_imports

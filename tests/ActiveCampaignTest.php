@@ -5,7 +5,7 @@ use TestMonitor\ActiveCampaign\ActiveCampaign;
 
 class ActiveCampaignTest extends TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }
@@ -15,7 +15,7 @@ class ActiveCampaignTest extends TestCase
         $activeCampaign = new ActiveCampaign('', '123', $http = Mockery::mock('GuzzleHttp\Client'));
 
         $http->shouldReceive('request')->once()->with('GET', 'organizations', [])->andReturn(
-            $response = Mockery::mock('GuzzleHttp\Psr7\Response')
+            $response = Mockery::mock('Psr\Http\Message\ResponseInterface')
         );
 
         $response->shouldReceive('getStatusCode')->once()->andReturn(200);
@@ -31,7 +31,7 @@ class ActiveCampaignTest extends TestCase
         $activeCampaign = new ActiveCampaign('', '123', $http = Mockery::mock('GuzzleHttp\Client'));
 
         $http->shouldReceive('request')->once()->with('GET', 'organizations', [])->andReturn(
-            $response = Mockery::mock('GuzzleHttp\Psr7\Response')
+            $response = Mockery::mock('Psr\Http\Message\ResponseInterface')
         );
 
         $response->shouldReceive('getStatusCode')->andReturn(422);
@@ -52,7 +52,7 @@ class ActiveCampaignTest extends TestCase
         $activeCampaign = new ActiveCampaign('', '123', $http = Mockery::mock('GuzzleHttp\Client'));
 
         $http->shouldReceive('request')->once()->with('GET', 'organizations', [])->andReturn(
-            $response = Mockery::mock('GuzzleHttp\Psr7\Response')
+            $response = Mockery::mock('Psr\Http\Message\ResponseInterface')
         );
 
         $response->shouldReceive('getStatusCode')->andReturn(404);
@@ -65,7 +65,7 @@ class ActiveCampaignTest extends TestCase
         $activeCampaign = new ActiveCampaign('', '123', $http = Mockery::mock('GuzzleHttp\Client'));
 
         $http->shouldReceive('request')->once()->with('GET', 'organizations', [])->andReturn(
-            $response = Mockery::mock('GuzzleHttp\Psr7\Response')
+            $response = Mockery::mock('Psr\Http\Message\ResponseInterface')
         );
 
         $response->shouldReceive('getStatusCode')->andReturn(400);

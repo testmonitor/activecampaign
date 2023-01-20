@@ -1,7 +1,11 @@
 preset: laravel
+
 enabled:
-- length_ordered_imports
-- concat_with_spaces
+    - length_ordered_imports
+    - concat_with_spaces
+
 disabled:
-- alpha_ordered_imports
-- concat_without_spaces
+    - alpha_ordered_imports
+    - concat_without_spaces
+    - laravel_phpdoc_alignment
+    - laravel_phpdoc_order

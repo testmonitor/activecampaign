@@ -30,6 +30,7 @@ trait ManagesContacts
      * Find contact by email.
      *
      * @param string $email
+     *
      * @return Contact|null
      */
     public function findContact($email)

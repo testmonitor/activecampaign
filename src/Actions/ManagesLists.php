@@ -27,6 +27,7 @@ trait ManagesLists
      * Returns list by ID.
      *
      * @param string $id
+     *
      * @return ContactsList|null
      */
     public function getList($id)
@@ -46,6 +47,7 @@ trait ManagesLists
      * Finds list by it's name or URL-safe name.
      *
      * @param string $name name of list to find
+     *
      * @return null|ContactsList
      */
     public function findList($name)
@@ -65,6 +67,7 @@ trait ManagesLists
      * @param string $name Name of the list to create
      * @param string $senderUrl The website URL this list is for.
      * @param array  $params other options to create list
+     *
      * @return ContactsList
      */
     public function createList($name, $senderUrl, $params = [])

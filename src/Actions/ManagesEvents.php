@@ -28,6 +28,7 @@ trait ManagesEvents
      * Creates a new event (name only).
      *
      * @param string $name
+     *
      * @return Event
      */
     public function createEvent($name)

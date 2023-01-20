@@ -14,6 +14,7 @@ trait ManagesContactTags
      *
      * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
      * @param \TestMonitor\ActiveCampaign\Resources\Tag $tag
+     *
      * @return array
      */
     public function addTagToContact(Contact $contact, Tag $tag)

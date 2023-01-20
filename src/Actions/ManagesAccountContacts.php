@@ -27,6 +27,7 @@ trait ManagesAccountContacts
      *
      * @param int $contactId
      * @param int $accountId
+     *
      * @return AccountContact|null
      */
     public function findAccountContact($contactId, $accountId)

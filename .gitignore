@@ -16,6 +16,7 @@ composer.lock
 
 # Code Styling / Linting
 .php_cs.cache
+.phpunit.result.cache
 build
 
 # OS

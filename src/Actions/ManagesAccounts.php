@@ -62,6 +62,7 @@ trait ManagesAccounts
      *
      * @param int $accountId
      * @param array $data
+     *
      * @return Account|null
      */
     public function updateAccount($accountId, array $data = [])

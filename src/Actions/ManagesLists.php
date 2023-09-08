@@ -12,12 +12,15 @@ trait ManagesLists
     /**
      * Returns all lists.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return ContactsList[]
      */
-    public function lists()
+    public function lists(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('lists'),
+            $this->get('lists', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             ContactsList::class,
             'lists'
         );
@@ -119,12 +122,15 @@ trait ManagesLists
     /**
      * Get all contacts related to the list.
      *
+     * @param int $listId
+     * @param int $limit
+     *
      * @return Contact[]
      */
-    public function contactsByList($listId)
+    public function contactsByList($listId, int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('contacts', ['query' => ['listid' => $listId]]),
+            $this->get('contacts', ['query' => ['listid' => $listId, 'limit' => $limit, 'offset' => $offset]]),
             Contact::class,
             'contacts'
         );

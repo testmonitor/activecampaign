@@ -11,12 +11,15 @@ trait ManagesAccountCustomFields
     /**
      * Get all custom fields.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return array
      */
-    public function customAccountFields()
+    public function customAccountFields(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('accountCustomFieldMeta'),
+            $this->get('accountCustomFieldMeta', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             AccountCustomField::class,
             'accountCustomFieldMeta'
         );

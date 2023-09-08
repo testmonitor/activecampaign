@@ -12,13 +12,16 @@ trait ManagesOrganizations
     /**
      * Get all organizations.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @deprecated use accounts() instead
      * @return array
      */
-    public function organizations()
+    public function organizations(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('organizations'),
+            $this->get('organizations', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             Organization::class,
             'organizations'
         );

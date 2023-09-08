@@ -11,12 +11,15 @@ trait ManagesAutomations
     /**
      * Get all automations.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return array
      */
-    public function automations()
+    public function automations(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('automations'),
+            $this->get('automations', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             Automation::class,
             'automations'
         );

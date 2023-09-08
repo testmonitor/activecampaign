@@ -15,12 +15,15 @@ trait ManagesContacts
     /**
      * Get all contacts.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return array
      */
-    public function contacts()
+    public function contacts(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('contacts'),
+            $this->get('contacts', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             Contact::class,
             'contacts'
         );
@@ -107,13 +110,15 @@ trait ManagesContacts
      * Get all automations of a contact.
      *
      * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param int $limit
+     * @param int $offset
      *
      * @return array
      */
-    public function contactAutomations(Contact $contact)
+    public function contactAutomations(Contact $contact, int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get("contacts/{$contact->id}/contactAutomations"),
+            $this->get("contacts/{$contact->id}/contactAutomations", ['query' => ['limit' => $limit, 'offset' => $offset]]),
             ContactAutomation::class,
             'contactAutomations'
         );
@@ -123,13 +128,15 @@ trait ManagesContacts
      * Get all tags of a contact.
      *
      * @param \TestMonitor\ActiveCampaign\Resources\Contact $contact
+     * @param int $limit
+     * @param int $offset
      *
      * @return array
      */
-    public function contactTags(Contact $contact)
+    public function contactTags(Contact $contact, int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get("contacts/{$contact->id}/contactTags"),
+            $this->get("contacts/{$contact->id}/contactTags", ['query' => ['limit' => $limit, 'offset' => $offset]]),
             ContactTag::class,
             'contactTags'
         );

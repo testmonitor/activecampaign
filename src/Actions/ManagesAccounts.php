@@ -11,12 +11,15 @@ trait ManagesAccounts
     /**
      * Get all accounts.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return array
      */
-    public function accounts()
+    public function accounts(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('accounts'),
+            $this->get('accounts', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             Account::class,
             'accounts'
         );

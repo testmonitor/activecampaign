@@ -11,12 +11,15 @@ trait ManagesAccountContacts
     /**
      * Retrieve all existing account association.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return array
      */
-    public function accountContacts()
+    public function accountContacts(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('accountContacts'),
+            $this->get('accountContacts', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             AccountContact::class,
             'accountContacts'
         );

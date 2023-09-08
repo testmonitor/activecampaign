@@ -45,12 +45,15 @@ trait ManagesEvents
     /**
      * List all events.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return Event[]
      */
-    public function events()
+    public function events(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('eventTrackingEvents'),
+            $this->get('eventTrackingEvents', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             Event::class,
             'eventTrackingEvents'
         );
@@ -59,11 +62,14 @@ trait ManagesEvents
     /**
      * List name of all events.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return Event[]
      */
-    public function eventNames()
+    public function eventNames(int $limit = 100, int $offset = 0)
     {
-        $events = $this->get('eventTrackingEvents');
+        $events = $this->get('eventTrackingEvents', ['query' => ['limit' => $limit, 'offset' => $offset]]);
 
         return array_map(function ($data) {
             return $data['name'];

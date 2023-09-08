@@ -11,12 +11,15 @@ trait ManagesTags
     /**
      * Get all tags.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return array
      */
-    public function tags()
+    public function tags(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('tags'),
+            $this->get('tags', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             Tag::class,
             'tags'
         );
@@ -26,13 +29,15 @@ trait ManagesTags
      * Find tag by name.
      *
      * @param string $name
+     * @param int $limit
+     * @param int $offset
      *
      * @return array
      */
-    public function findTag($name)
+    public function findTag($name, int $limit = 100, int $offset = 0)
     {
         $tags = $this->transformCollection(
-            $this->get('tags', ['query' => ['search' => $name]]),
+            $this->get('tags', ['query' => ['search' => $name, 'limit' => $limit, 'offset' => $offset]]),
             Tag::class,
             'tags'
         );

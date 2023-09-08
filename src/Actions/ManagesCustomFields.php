@@ -12,12 +12,15 @@ trait ManagesCustomFields
     /**
      * Get all custom fields.
      *
+     * @param int $limit
+     * @param int $offset
+     *
      * @return array
      */
-    public function customFields()
+    public function customFields(int $limit = 100, int $offset = 0)
     {
         return $this->transformCollection(
-            $this->get('fields'),
+            $this->get('fields', ['query' => ['limit' => $limit, 'offset' => $offset]]),
             CustomField::class,
             'fields'
         );
